@@ -27,15 +27,15 @@ export const Footer = () => {
         </div>
         <div className="my-5">
           <h2 className="font-semibold text-lg mb-4">Categories</h2>
-          <p className="text-white mb-1">123 Street, City</p>
-          <p className="text-white mb-1">Phone: 123-456-7890</p>
-          <p className="text-white">Email: info@example.com</p>
+          <p className=" mb-1">123 Street, City</p>
+          <p className=" mb-1">Phone: 123-456-7890</p>
+          <p className="">Email: info@example.com</p>
           <div className="mt-2">
-            <div className="text-white flex items-center gap-3 mt-3 ">
+            <div className=" flex items-center gap-3 mt-3 ">
               <FaInstagram className="w-6 h-6" />
               <span className="">user_name</span>
             </div>
-            <div className="text-white flex items-center gap-3 mt-3 ">
+            <div className=" flex items-center gap-3 mt-3 ">
               <FaFacebook className="w-6 h-6" />
               <span className="">user_name</span>
             </div>
