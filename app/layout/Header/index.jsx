@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CiUser, CiShoppingCart, CiHeart, CiSearch } from "react-icons/ci";
+import { CiUser, CiShoppingCart, CiSearch } from "react-icons/ci";
 import { BiArrowBack } from "react-icons/bi";
 import { useTheme } from "next-themes";
 export const Header = () => {
@@ -69,15 +69,6 @@ export const Header = () => {
               <CiShoppingCart />
             </div>
             <span className="text-xs sm:text-sm font-semibold">Cart</span>
-          </div>
-          <div className="flex items-center flex-col">
-            <div className="relative">
-              <span className="h-1 w-1 flex justify-center -top-1 -right-2 items-center bg-red-500 text-xs text-white p-2 rounded-full absolute">
-                0
-              </span>
-              <CiHeart />
-            </div>
-            <span className="text-xs sm:text-sm font-semibold">Wishlist</span>
           </div>
           <div className="flex items-center flex-col ">
             <CiUser />
