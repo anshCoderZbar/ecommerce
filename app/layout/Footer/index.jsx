@@ -4,8 +4,8 @@ import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <footer className="bg-black ">
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  p-2 text-white w-full sm:p-4 md:p-8 lg:p-12">
+    <footer className=" bg-gray-50  dark:bg-gray-900 dark:text-white  opacity- shadow-lg w-full">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  p-2 w-full sm:p-4 md:p-8 lg:p-12">
         <div className="my-5">logo</div>
         <div className="my-5">
           <h2 className="font-semibold text-lg mb-4">Categories</h2>
@@ -42,7 +42,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center text-white p-5 bg-red-700 capitalize">
+      <div className="text-center text-white p-5 bg-red-700 dark:bg-red-950 capitalize">
         © {new Date().getFullYear()}-copyright claim by ---firm
       </div>
     </footer>
