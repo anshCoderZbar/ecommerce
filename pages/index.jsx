@@ -34,12 +34,14 @@ export default function Home() {
           {BannerImg?.map((image, i) => {
             return (
               <SwiperSlide key={i}>
-                <Image
-                  src={image?.img}
-                  alt="banner1"
-                  loading="lazy"
-                  className="w-full h-auto lg:h-[500px]"
-                />
+                <div className="w-full h-full">
+                  <Image
+                    src={image?.img}
+                    alt="banner1"
+                    loading="lazy"
+                    className="w-full h-auto aspect-video max-w-full lg:h-[500px]"
+                  />
+                </div>
               </SwiperSlide>
             );
           })}
