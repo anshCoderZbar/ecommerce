@@ -24,16 +24,6 @@ body {
   overflow-x: hidden;
 }
 
-::-moz-selection {
-  background-color: yellow;
-  color: black;
-}
-
-::selection {
-  background-color: yellow;
-  color: black;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
   color: #000 !important;
