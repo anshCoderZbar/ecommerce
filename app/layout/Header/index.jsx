@@ -1,12 +1,22 @@
-import React, { useState } from "react";
-import { CiUser, CiShoppingCart, CiSearch } from "react-icons/ci";
+import React, { useEffect, useState } from "react";
+import { CiShoppingCart, CiSearch } from "react-icons/ci";
 import { BiArrowBack } from "react-icons/bi";
 import { useTheme } from "next-themes";
+
+import { Profile } from "./Profile";
+
 export const Header = () => {
   const [active, setActive] = useState(false);
   const [openInput, setOpenInput] = useState(false);
 
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    active
+      ? (document.documentElement.style.overflowY = "hidden")
+      : (document.documentElement.style.overflowY = "auto");
+  }, [active]);
+
   return (
     <nav className="py-6 bg-white shadow-lg w-full dark:bg-gray-800 dark:text-white">
       <div
@@ -28,16 +38,24 @@ export const Header = () => {
         <div
           className={`absolute top-0 left-0 w-full z-50 sm:w-[50%] bg-white dark:bg-gray-800  h-full flex items-center justify-center  ${
             active
-              ? "translate-x-[0%] transition-all duration-500 shadow-lg"
+              ? "translate-x-[0%] transition-all duration-500 shadow-lg overflow-hidden "
               : "-translate-x-[100%] transition-all duration-500"
           } lg:static lg:top-auto lg:left-auto lg:w-auto lg:h-auto lg:translate-x-0`}
         >
           <ul className="flex flex-col lg:flex-row items-center gap-14 lg:gap-4 xl:gap-10 justify-center">
-            <li className="cursor-pointer font-semibold text-base">Men</li>
-            <li className="cursor-pointer font-semibold text-base">Women</li>
-            <li className="cursor-pointer font-semibold text-base">Kids</li>
-            <li className="cursor-pointer font-semibold text-base">Beauty</li>
-            <li className="cursor-pointer font-semibold text-base">
+            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+              Men
+            </li>
+            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+              Women
+            </li>
+            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+              Kids
+            </li>
+            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+              Beauty
+            </li>
+            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
               Accessories
             </li>
           </ul>
@@ -61,21 +79,20 @@ export const Header = () => {
             <CiSearch />
             <span className="text-xs sm:text-sm font-semibold">Search</span>
           </div>
-          <div className="flex items-center flex-col">
-            <div className="relative z-0">
-              <span className="h-1 w-1 flex justify-center -top-1 -right-2 items-center bg-red-500 text-xs text-white p-2 rounded-full absolute">
-                5
+          <div className="flex items-center flex-col cursor-pointer">
+            <div className="relative z-0 ">
+              <span className="h-1 w-1 flex justify-center -top-1 -right-2 items-center bg-red-500 text-xs text-white p-2 rounded-full absolute ">
+                0
               </span>
               <CiShoppingCart />
             </div>
             <span className="text-xs sm:text-sm font-semibold">Cart</span>
           </div>
-          <div className="flex items-center flex-col ">
-            <CiUser />
-            <span className="text-xs sm:text-sm font-semibold">Profile</span>
+          <div className="flex items-center flex-col cursor-pointer">
+            <Profile />
           </div>
           <select
-            className="bg-transparent border rounded-lg p-1 outline-none text-sm"
+            className="bg-transparent border rounded-lg p-1 outline-none text-sm cursor-pointer"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
           >
