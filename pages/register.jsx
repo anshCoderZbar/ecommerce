@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 
-export default function login() {
+export default function register() {
   return (
     <main>
       <Layout>
@@ -11,14 +11,14 @@ export default function login() {
           <div className="text-center my-10">
             <Link
               href="/login"
-              className="font-semibold py-3 px-5 leading-none uppercase transition-all text-red-500  text-base md:text-md lg:text-lg"
+              className="font-semibold py-3 px-5 leading-none uppercase transition-all hover:text-red-500  text-base md:text-md lg:text-lg"
             >
               Login
             </Link>
             <span className="inline-block mx-2">|</span>
             <Link
               href="/register"
-              className="font-semibold py-3 px-5 leading-none uppercase transition-all hover:text-red-500 text-base md:text-md lg:text-lg"
+              className="font-semibold py-3 px-5 leading-none text-red-500 uppercase transition-all   text-base md:text-md lg:text-lg"
             >
               Register
             </Link>
@@ -50,6 +50,14 @@ export default function login() {
                   id="password"
                   class="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base placeholder:font-semibold"
                   placeholder="Password"
+                />
+              </div>
+              <div class="mb-2">
+                <input
+                  type="password"
+                  id="password"
+                  class="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base placeholder:font-semibold"
+                  placeholder="Re-enter Password"
                 />
               </div>
               <button class="inline-block leading-none uppercase text-white text-sm bg-black px-5 py-4 transition-all hover:bg-red-500">
