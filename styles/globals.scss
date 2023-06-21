@@ -4,12 +4,7 @@
 
 :root {
   --background: white;
-  --foreground: rgb(31, 41, 55);
-}
-
-[data-theme="dark"] {
-  --background: rgb(31, 41, 55);
-  --foreground: white;
+  --foreground: ;
 }
 
 * {
@@ -70,4 +65,11 @@ body {
 
 .content:hover .overlay {
   height: 100%;
+}
+
+.errorMessage {
+  color: red;
+  margin: 5px 0 0 0;
+  font-size: 13px;
+  text-transform: lowercase;
 }

@@ -18,6 +18,12 @@ export const Header = () => {
       : (document.documentElement.style.overflowY = "auto");
   }, [active]);
 
+  useEffect(() => {
+    theme === "dark"
+      ? (document.body.style.background = "rgb(31, 41, 55)")
+      : (document.body.style.background = "white");
+  }, [theme]);
+
   return (
     <nav className="py-6 bg-white shadow-lg w-full dark:bg-gray-800 dark:text-white">
       <div

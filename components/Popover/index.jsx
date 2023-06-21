@@ -36,8 +36,10 @@ export const PopOver = ({ isOpen, setIsOpen, children, className }) => {
           leaveTo="opacity-0 translate-y-1"
         >
           <Popover.Panel className="z-10 absolute">
-            <div className="overflow-hidden border w-full border-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-              <div className={`gap-8 px-5 py-5  bg-white ${className}`}>
+            <div className="overflow-hidden border w-full border-white dark:border-gray-700  rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+              <div
+                className={`gap-8 px-5 py-5  bg-white dark:bg-gray-800 ${className}`}
+              >
                 {children}
               </div>
             </div>

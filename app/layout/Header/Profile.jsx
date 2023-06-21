@@ -10,7 +10,10 @@ export const Profile = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div onClick={() => setIsOpen(!isOpen)}>
+      <div
+        className="flex flex-col justify-center items-center"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <CiUser />
         <span className="text-xs sm:text-sm font-semibold">Profile</span>
       </div>
