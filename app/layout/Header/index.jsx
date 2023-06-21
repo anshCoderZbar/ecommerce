@@ -4,6 +4,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { useTheme } from "next-themes";
 
 import { Profile } from "./Profile";
+import Link from "next/link";
 
 export const Header = () => {
   const [active, setActive] = useState(false);
@@ -33,7 +34,9 @@ export const Header = () => {
             <div className="h-[2px] w-7 my-2 rounded-full bg-black dark:bg-white"></div>
             <div className="h-[2px] w-7 my-2 rounded-full bg-black dark:bg-white"></div>
           </div>
-          <div className="logo">logo</div>
+          <Link href={"/"} className="logo">
+            logo
+          </Link>
         </div>
         <div
           className={`absolute top-0 left-0 w-full z-50 sm:w-[50%] bg-white dark:bg-gray-800  h-full flex items-center justify-center  ${

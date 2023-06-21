@@ -30,29 +30,29 @@ export default function login() {
                 <FcGoogle /> Sign in with Google
               </span>
             </button>
-            <div class="flex items-center my-8">
-              <hr class="flex-grow border-[#e6e6e6] border-t-[1px] mr-4" />
-              <span class="text-black font-semibold text-lg">OR</span>
-              <hr class="flex-grow border-[#e6e6e6] border-t-[1px] ml-4" />
+            <div className="flex items-center my-8">
+              <hr className="flex-grow border-[#e6e6e6] border-t-[1px] mr-4" />
+              <span className="text-black font-semibold text-lg">OR</span>
+              <hr className="flex-grow border-[#e6e6e6] border-t-[1px] ml-4" />
             </div>
             <form>
-              <div class="mb-2">
+              <div className="mb-2">
                 <input
                   type="email"
                   id="email"
-                  class="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base placeholder:font-semibold"
+                  className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base placeholder:font-semibold"
                   placeholder="Email"
                 />
               </div>
-              <div class="mb-2">
+              <div className="mb-2">
                 <input
                   type="password"
                   id="password"
-                  class="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base placeholder:font-semibold"
+                  className="border border-solid border-gray-300 w-full py-1 px-5 mb-5 placeholder-current text-dark h-12 focus:outline-none text-base placeholder:font-semibold"
                   placeholder="Password"
                 />
               </div>
-              <button class="inline-block leading-none uppercase text-white text-sm bg-black px-5 py-4 transition-all hover:bg-red-500">
+              <button className="inline-block leading-none uppercase text-white text-sm bg-black px-5 py-4 transition-all hover:bg-red-500">
                 Login
               </button>
             </form>
