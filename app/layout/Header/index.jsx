@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { CiShoppingCart, CiSearch } from "react-icons/ci";
 import { BiArrowBack } from "react-icons/bi";
 import { useTheme } from "next-themes";
 
 import { Profile } from "./Profile";
-import Link from "next/link";
 
 export const Header = () => {
   const [active, setActive] = useState(false);
