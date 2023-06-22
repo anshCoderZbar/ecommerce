@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <Layout>
         <Banner />
-        <div className="bg-white dark:bg-gray-800">
+        <div className="bg-white dark:bg-dark-background">
           <Category />
           <div className="container mx-auto my-7">
             <div className="flex justify-between items-center px-2">

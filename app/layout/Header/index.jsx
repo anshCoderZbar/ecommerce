@@ -18,19 +18,8 @@ export const Header = () => {
       : (document.documentElement.style.overflowY = "auto");
   }, [active]);
 
-  useEffect(() => {
-    theme === "dark"
-      ? (document.body.style.background = "rgb(31, 41, 55)")
-      : (document.body.style.background = "white") ||
-        (window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ? (document.body.style.background = "rgb(31, 41, 55)")
-      : (document.body.style.background = "white") ||
-        (theme === "light" && (document.body.style.background = "white"));
-  }, [theme]);
-
   return (
-    <nav className="py-6 bg-white shadow-lg w-full fixed z-40 top-0 dark:bg-gray-800 dark:text-white">
+    <nav className="py-6 bg-white shadow-lg w-full fixed z-40 top-0 dark:bg-dark-background dark:text-white">
       <div
         className={`container mx-auto flex justify-between items-center gap-4 ${
           openInput ? "hidden" : "block"
@@ -50,7 +39,7 @@ export const Header = () => {
           </Link>
         </div>
         <div
-          className={`absolute top-0 left-0 w-full z-50 sm:w-[50%] bg-white dark:bg-gray-800  h-full flex items-center justify-center  ${
+          className={`absolute top-0 left-0 w-full z-50 sm:w-[50%] bg-white dark:bg-dark-background  h-full flex items-center justify-center  ${
             active
               ? "translate-x-[0%] transition-all duration-500 shadow-lg overflow-hidden "
               : "-translate-x-[100%] transition-all duration-500"
@@ -78,14 +67,14 @@ export const Header = () => {
         <div className="relative hidden md:block">
           <input
             type="text"
-            className=" border-[1px] p-1 w-full md:w-[350px] lg:w-[300px] xl:w-[500px] border-[#e6e6e6] pl-10 px-3 rounded-md bg-gray-100 focus:outline-none focus:bg-white placeholder:text-sm dark:dark:bg-gray-800"
+            className=" border-[1px] p-1 w-full md:w-[350px] lg:w-[300px] xl:w-[500px] border-[#e6e6e6] pl-10 px-3 rounded-md bg-gray-100 focus:outline-none focus:bg-white placeholder:text-sm dark:dark:bg-dark-background"
             placeholder="Search for products"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 ">
             <CiSearch />
           </div>
         </div>
-        <div className="flex  items-center  bg-white dark:bg-gray-800 gap-3 sm:gap-5  md:gap-8 text-xl mr-5">
+        <div className="flex  items-center  bg-white dark:bg-dark-background gap-3 sm:gap-5  md:gap-8 text-xl mr-5">
           <div
             className="flex items-center flex-col md:hidden"
             onClick={() => setOpenInput(true)}
@@ -112,14 +101,20 @@ export const Header = () => {
           >
             <option
               value="system"
-              className=" dark:bg-gray-800 dark:text-white"
+              className=" dark:bg-dark-background dark:text-white"
             >
               System
             </option>
-            <option value="dark" className=" dark:bg-gray-800 dark:text-white">
+            <option
+              value="dark"
+              className=" dark:bg-dark-background dark:text-white"
+            >
               Dark
             </option>
-            <option value="light" className=" dark:bg-gray-800 dark:text-white">
+            <option
+              value="light"
+              className=" dark:bg-dark-background dark:text-white"
+            >
               Light
             </option>
           </select>

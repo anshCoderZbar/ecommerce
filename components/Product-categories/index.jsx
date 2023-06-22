@@ -11,7 +11,7 @@ export const ProductCategories = (props) => {
       slidesPerView={2}
       modules={[Navigation]}
       navigation
-      className="bg-white dark:bg-gray-800 my-5 shadow-lg dark:shadow-none"
+      className="bg-white dark:bg-dark-background my-5 shadow-lg dark:shadow-none"
       breakpoints={{
         400: {
           slidesPerView: 3,
@@ -34,7 +34,7 @@ export const ProductCategories = (props) => {
         return (
           <SwiperSlide
             key={i}
-            className=" bg-white dark:bg-gray-800 rounded overflow-hidden"
+            className=" bg-white dark:bg-dark-background rounded overflow-hidden"
           >
             <CategoryCard data={data} />
           </SwiperSlide>
