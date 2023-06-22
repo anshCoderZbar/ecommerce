@@ -18,7 +18,7 @@ export default function Home() {
 
           <div className="container mx-auto py-4">
             <div className="flex justify-between items-center px-2">
-              <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
+              <h2 className="text-sm tracking-wide sm:text-base sm:tracking-wide md:text-lg md:tracking-wider font-bold">
                 TRENDS FOR HIM
               </h2>
             </div>
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <div className="container mx-auto py-4">
             <div className="flex justify-between items-center px-2">
-              <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
+              <h2 className="text-sm tracking-wide sm:text-base sm:tracking-wide md:text-lg md:tracking-wider font-bold">
                 TRENDS FOR HER
               </h2>
             </div>
@@ -34,7 +34,7 @@ export default function Home() {
           </div>
           <div className="container mx-auto py-4">
             <div className="flex justify-between items-center px-2">
-              <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
+              <h2 className="text-sm tracking-wide sm:text-base sm:tracking-wide md:text-lg md:tracking-wider font-bold">
                 BEST OF KIDSWEAR
               </h2>
             </div>
@@ -42,7 +42,7 @@ export default function Home() {
           </div>
           <div className="container mx-auto py-4">
             <div className="flex justify-between items-center px-2">
-              <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
+              <h2 className="text-sm tracking-wide sm:text-base sm:tracking-wide md:text-lg md:tracking-wider font-bold">
                 LATEST IN BEAUTY & GROOMING
               </h2>
             </div>

@@ -1,81 +1,72 @@
-import React from "react";
+import { MenFilterData } from "mock/men/Filter";
+import React, { useEffect } from "react";
 
 import { FcClearFilters } from "react-icons/fc";
+import { RxCross2 } from "react-icons/rx";
 
-export const MenFilter = () => {
-  const categories = ["Clothing", "Shoes", "Accessories"];
-  const priceRanges = ["Under $50", "$50 - $100", "$100 - $200", "Over $200"];
-  const brands = ["Nike", "Adidas", "Puma", "Reebok", "Vans"];
+export const MenFilter = ({ active, setActive }) => {
+  useEffect(() => {
+    active
+      ? (document.documentElement.style.overflowY = "hidden")
+      : (document.documentElement.style.overflowY = "auto");
+  }, [active]);
+
   return (
-    <div className="w-72 py-6 rounded-lg  mb-6 pb-6">
-      <div className="flex flex-col gap-3">
-        <div class="flex text-4xl font-semibold my-4 md:my-3 justify-between">
-          Filters
-          <FcClearFilters />
-        </div>
-        <hr class="w-full border border-black dark:border-white"></hr>
-        <div className="border-b-[1px] border-[#e6e6e6e] mt-3 mx-6">
-          <h3 className="text-xl font-semibold mb-2">Category</h3>
-          <ul className="m-4">
-            {categories.map((category, index) => (
-              <li key={index} className="mb-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="category"
-                  className="mr-2 leading-tight"
-                  id={`category-${index}`}
-                />
-                <label
-                  class="text-black font-medium text-base"
-                  htmlFor={`category-${index}`}
-                >
-                  {category}
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="border-b-[1px] border-[#e6e6e6e] mt-3 mx-6">
-          <h3 className="text-xl font-semibold mb-2">Price Range</h3>
-          <ul className="m-4">
-            {priceRanges.map((range, index) => (
-              <li key={index} className="mb-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="price-range"
-                  className="mr-2 leading-tight"
-                  id={`price-range-${index}`}
-                />
-                <label
-                  class="text-black font-medium text-base"
-                  htmlFor={`price-range-${index}`}
-                >
-                  {range}
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="border-b-[1px] border-[#e6e6e6e] mt-3 mx-6">
-          <h3 className="text-xl font-semibold mb-2">Brand</h3>
-          <ul className="m-4">
-            {brands.map((brand, index) => (
-              <li key={index} className="mb-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="brand"
-                  className="mr-2 leading-tight"
-                  id={`brand-${index}`}
-                />
-                <label
-                  class="text-black font-medium text-base"
-                  htmlFor={`brand-${index}`}
-                >
-                  {brand}
-                </label>
-              </li>
-            ))}
-          </ul>
+    <div
+      className={`${
+        active
+          ? "-translate-x-0 transition-all"
+          : "-translate-x-full transition-all"
+      }  absolute h-full w-[90%] sm:9/12 md:w-1/2 lg:w-4/12	 left-0 xl:w-80 xl:h-auto xl:left-auto bg-white dark:bg-dark-background xl:translate-x-0 xl:static`}
+    >
+      <div className="w-full relative py-6 rounded-lg  mb-6 pb-6">
+        {active && (
+          <div
+            onClick={() => setActive(false)}
+            className="absolute -right-8 border top-0 text-3xl rounded-tr-md rounded-br-md border-black dark:border-white xl:hidden"
+          >
+            <RxCross2 />
+          </div>
+        )}
+        <div className="flex flex-col gap-3 ">
+          <div className="flex text-4xl font-semibold mx-5 my-4 md:my-3 justify-between">
+            Filters
+            <FcClearFilters />
+          </div>
+          <hr className="w-full border border-black dark:border-white" />
+          {MenFilterData?.map((filterGroup) => {
+            return (
+              <div
+                key={filterGroup?.id}
+                className="border-b-[1px] border-[#e6e6e6e] mt-3 mx-14"
+              >
+                <h3 className="text-xl capitalize font-semibold mb-2">
+                  {filterGroup?.name}
+                </h3>
+                <ul className="m-4">
+                  {filterGroup?.filters?.length >= 1 &&
+                    filterGroup?.filters?.map((elm) => {
+                      return (
+                        <li key={elm.id} className="mb-2 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="category"
+                            className="mr-2 leading-tight"
+                            id={`category-${1}`}
+                          />
+                          <label
+                            className=" capitalize font-medium text-base"
+                            htmlFor={`category-${1}`}
+                          >
+                            {elm?.name}
+                          </label>
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
