@@ -15,7 +15,7 @@ export const Category = () => {
     []
   );
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto pt-3 sm:pt-5">
       <div className="flex flex-wrap gap-5 md:gap-7 lg:gap-10 items-center justify-center py-5 ">
         {Section?.map((data, i) => {
           return (

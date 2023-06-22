@@ -1,17 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 
 import { BannerImg } from "mock/banner";
 
 export const Banner = () => {
   return (
     <Swiper
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={50}
       slidesPerView={1}
       loop={true}
+      autoplay={{
+        delay: 1500,
+      }}
       pagination={{ clickable: true }}
       navigation
     >
