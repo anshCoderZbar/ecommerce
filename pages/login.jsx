@@ -8,7 +8,7 @@ export default function login() {
     <main>
       <Layout>
         <div className="w-full md:w-2/4 mx-auto my-5">
-          <div className="text-center my-10 pt-5">
+          <div className="text-center my-10 ">
             <Link
               href="/login"
               className="font-semibold py-3 px-5 leading-none uppercase transition-all text-red-500  text-base md:text-md lg:text-lg"

@@ -19,7 +19,7 @@ export const Header = () => {
   }, [active]);
 
   return (
-    <nav className="py-6 bg-white shadow-lg w-full fixed z-40 top-0 dark:bg-dark-background dark:text-white">
+    <nav className="py-6 bg-white shadow-lg w-full  dark:bg-dark-background dark:text-white">
       <div
         className={`container mx-auto flex justify-between items-center gap-4 ${
           openInput ? "hidden" : "block"
@@ -46,19 +46,19 @@ export const Header = () => {
           } lg:static lg:top-auto lg:left-auto lg:w-auto lg:h-auto lg:translate-x-0`}
         >
           <ul className="flex flex-col lg:flex-row items-center gap-14 lg:gap-4 xl:gap-10 justify-center">
-            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
               Men
             </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
               Women
             </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
               Kids
             </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
               Beauty
             </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
+            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
               Accessories
             </li>
           </ul>

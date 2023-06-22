@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dark-background": "#121212",
+        "dark-background": "#000",
       },
     },
   },

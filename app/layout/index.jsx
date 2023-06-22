@@ -16,7 +16,7 @@ export const Layout = ({ children }) => {
   return (
     <animated.div style={props}>
       <Header />
-      <div className="mt-[5.5rem]">{children}</div>
+      {children}
       <Footer />
     </animated.div>
   );
