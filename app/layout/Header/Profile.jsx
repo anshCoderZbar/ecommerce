@@ -24,7 +24,7 @@ export const Profile = () => {
         >
           <AiOutlineLogout /> Signin
         </Link>
-        {/* <div className="flex gap-3 items-center text-base py-2 px-2">
+        <div className="flex gap-3 items-center text-base py-2 px-2">
           <CiUser />
           Settings
         </div>
@@ -33,7 +33,7 @@ export const Profile = () => {
         </div>
         <button className="flex gap-3 items-center text-base pt-2 px-2">
           <AiOutlineLogout /> Signout
-        </button> */}
+        </button>
       </PopOver>
     </>
   );

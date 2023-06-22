@@ -5,6 +5,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { useTheme } from "next-themes";
 
 import { Profile } from "./Profile";
+import { HeaderRoutes } from "mock/header";
 
 export const Header = () => {
   const [active, setActive] = useState(false);
@@ -46,21 +47,17 @@ export const Header = () => {
           } lg:static lg:top-auto lg:left-auto lg:w-auto lg:h-auto lg:translate-x-0`}
         >
           <ul className="flex flex-col lg:flex-row items-center gap-14 lg:gap-4 xl:gap-10 justify-center">
-            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
-              Men
-            </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
-              Women
-            </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
-              Kids
-            </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
-              Beauty
-            </li>
-            <li className="cursor-pointer font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700">
-              Accessories
-            </li>
+            {HeaderRoutes &&
+              HeaderRoutes?.map((routes) => {
+                return (
+                  <li
+                    key={routes?.id}
+                    className="cursor-pointer uppercase font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700"
+                  >
+                    <Link href={routes?.slug}> {routes?.name}</Link>
+                  </li>
+                );
+              })}
           </ul>
         </div>
 
