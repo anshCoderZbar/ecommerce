@@ -7,13 +7,13 @@ import { CategoryCard } from "components/Category-Card";
 export const ProductCategories = (props) => {
   return (
     <Swiper
-      spaceBetween={5}
+      spaceBetween={1}
       slidesPerView={2}
       modules={[Navigation]}
       navigation
       className="bg-white dark:bg-dark-background py-5 shadow-lg dark:shadow-none"
       breakpoints={{
-        400: {
+        450: {
           slidesPerView: 3,
         },
         750: {
@@ -25,7 +25,7 @@ export const ProductCategories = (props) => {
         1200: {
           slidesPerView: 5,
         },
-        1600: {
+        2000: {
           slidesPerView: 6,
         },
       }}
@@ -34,7 +34,7 @@ export const ProductCategories = (props) => {
         return (
           <SwiperSlide
             key={i}
-            className=" bg-white dark:bg-dark-background rounded overflow-hidden"
+            className=" bg-red dark:bg-dark-background  overflow-hidden"
           >
             <CategoryCard data={data} />
           </SwiperSlide>
