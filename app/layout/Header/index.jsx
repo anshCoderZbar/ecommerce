@@ -25,7 +25,8 @@ export const Header = () => {
         (window.matchMedia &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ? (document.body.style.background = "rgb(31, 41, 55)")
-      : (document.body.style.background = "white");
+      : (document.body.style.background = "white") ||
+        (theme === "light" && (document.body.style.background = "white"));
   }, [theme]);
 
   return (
