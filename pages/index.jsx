@@ -15,10 +15,35 @@ export default function Home() {
         <Banner />
         <div className="bg-white dark:bg-dark-background">
           <Category />
-          <div className="container mx-auto py-7">
+
+          <div className="container mx-auto py-4">
             <div className="flex justify-between items-center px-2">
               <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
-                TOP PICKS
+                TRENDS FOR HIM
+              </h2>
+            </div>
+            <LatestCollection />
+          </div>
+          <div className="container mx-auto py-4">
+            <div className="flex justify-between items-center px-2">
+              <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
+                TRENDS FOR Her
+              </h2>
+            </div>
+            <LatestCollection />
+          </div>
+          <div className="container mx-auto py-4">
+            <div className="flex justify-between items-center px-2">
+              <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
+                BEST OF KIDSWEAR
+              </h2>
+            </div>
+            <LatestCollection />
+          </div>
+          <div className="container mx-auto py-4">
+            <div className="flex justify-between items-center px-2">
+              <h2 className="text-base sm:text-xl tracking-[5px] font-bold">
+                LATEST IN BEAUTY & GROOMING
               </h2>
             </div>
             <LatestCollection />
