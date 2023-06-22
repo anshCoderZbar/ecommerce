@@ -21,11 +21,15 @@ export const Header = () => {
   useEffect(() => {
     theme === "dark"
       ? (document.body.style.background = "rgb(31, 41, 55)")
+      : (document.body.style.background = "white") ||
+        (window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ? (document.body.style.background = "rgb(31, 41, 55)")
       : (document.body.style.background = "white");
   }, [theme]);
 
   return (
-    <nav className="py-6 bg-white shadow-lg w-full dark:bg-gray-800 dark:text-white">
+    <nav className="py-6 bg-white shadow-lg w-full fixed z-40 top-0 dark:bg-gray-800 dark:text-white">
       <div
         className={`container mx-auto flex justify-between items-center gap-4 ${
           openInput ? "hidden" : "block"

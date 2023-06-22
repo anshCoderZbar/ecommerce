@@ -25,7 +25,7 @@ export default function register() {
     <main>
       <Layout>
         <div className="w-full md:w-2/4 mx-auto my-5">
-          <div className="text-center my-10">
+          <div className="text-center my-10 pt-5">
             <Link
               href="/login"
               className="font-semibold py-3 px-5 leading-none uppercase transition-all text-base md:text-md lg:text-lg"
