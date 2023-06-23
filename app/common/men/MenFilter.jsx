@@ -17,9 +17,9 @@ export const MenFilter = ({ active, setActive }) => {
         active
           ? "-translate-x-0 transition-all !overflow-y-auto"
           : "-translate-x-full transition-all overflow-hidden"
-      }  absolute h-screen w-[90%] sm:9/12 md:w-1/2 lg:w-4/12	 left-0 xl:w-80 xl:h-auto xl:left-auto bg-white dark:bg-dark-background xl:translate-x-0 xl:static`}
+      }  absolute h-screen mb-5 w-[90%] sm:9/12 md:w-1/2 lg:w-4/12	 left-0 xl:w-80 xl:h-auto xl:left-auto bg-white dark:bg-dark-background xl:translate-x-0 xl:static`}
     >
-      <div className="w-full relative py-6 rounded-lg  mb-6 pb-6">
+      <div className="w-full  relative py-6 mb-24 rounded-lg pb-6">
         {active && (
           <div
             onClick={() => setActive(false)}
