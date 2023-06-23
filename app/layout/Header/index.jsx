@@ -80,12 +80,12 @@ export const Header = () => {
             <span className="text-xs sm:text-sm font-semibold">Search</span>
           </div>
           <div className="flex items-center flex-col cursor-pointer">
-            <div className="relative z-0 ">
+            <Link href="/cart" className="relative z-0 ">
               <span className="h-1 w-1 flex justify-center -top-1 -right-2 items-center bg-red-500 text-xs text-white p-2 rounded-full absolute ">
                 0
               </span>
               <CiShoppingCart />
-            </div>
+            </Link>
             <span className="text-xs sm:text-sm font-semibold">Cart</span>
           </div>
           <div className="flex items-center flex-col cursor-pointer">
