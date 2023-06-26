@@ -1,5 +1,7 @@
 import { Layout } from "app/layout";
 import React from "react";
+import ReactImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 import {
   BiShareAlt,
@@ -10,17 +12,34 @@ import {
 import { CiHeart } from "react-icons/ci";
 
 const ProductPage = () => {
+  const images = [
+    {
+      original: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      thumbnail: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      description: "Product 1",
+    },
+    {
+      original: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      thumbnail: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      description: "Product 2",
+    },
+    {
+      original: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      thumbnail: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      description: "Product 2",
+    },
+    {
+      original: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      thumbnail: "https://www.whitmorerarebooks.com/pictures/medium/2465.jpg",
+      description: "Product 2",
+    },
+  ];
   return (
     <Layout>
       <div class="text-gray-700 body-font overflow-hidden bg-white">
         <div class="container px-5 lg:px-0  py-10 mx-auto">
-          <div class="lg:w-4/5 mx-auto flex flex-wrap">
-            <img
-              alt="ecommerce"
-              class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-              src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg"
-            />
-
+          <div class=" mx-auto flex flex-wrap">
+            <ReactImageGallery items={images} />
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 class="text-sm title-font text-gray-500 tracking-widest">
                 BRAND NAME
