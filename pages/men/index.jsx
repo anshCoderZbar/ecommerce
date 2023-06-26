@@ -24,7 +24,7 @@ export default function Men() {
               <MenFilter active={active} setActive={setActive} />
               <div className="mt-8">
                 <div className="flex  items-center justify-between xl:justify-center pr-4">
-                  <h1 className="font-semibold m-2 mb-4 text-2xl md:text-4xl text-center capitalize">
+                  <h1 className="font-semibold m-2 mb-4  text-base sm:text-2xl md:text-4xl text-center capitalize">
                     Explore Our Latest Collection
                   </h1>
                   <div
