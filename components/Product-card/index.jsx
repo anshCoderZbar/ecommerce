@@ -1,11 +1,17 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 import { BiHeart } from "react-icons/bi";
 
 export const ProductCard = ({ product }) => {
+  const router = useRouter();
   return (
-    <div class="w-full bg-white dark:bg-dark-background  shadow-md rounded-xl duration-500  hover:shadow-xl">
-      <a href="#">
+    <div class="w-full bg-white dark:bg-dark-background cursor-pointer shadow-md rounded-xl duration-500  hover:shadow-xl">
+      <div
+        onClick={() =>
+          router.push(`/men/${product?.title?.replaceAll(" ", "_")}`)
+        }
+      >
         <div className="rounded-md flex justify-center overflow-hidden">
           <img
             src={product?.image}
@@ -32,7 +38,7 @@ export const ProductCard = ({ product }) => {
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 };
