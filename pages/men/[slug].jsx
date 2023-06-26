@@ -39,7 +39,12 @@ const ProductPage = () => {
       <div class="text-gray-700 body-font overflow-hidden bg-white">
         <div class="container px-5 lg:px-0  py-10 mx-auto">
           <div class=" mx-auto flex flex-wrap">
-            <ReactImageGallery items={images} />
+            <ReactImageGallery
+              showPlayButton={false}
+              showNav={false}
+              autoPlay={false}
+              items={images}
+            />
             <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 class="text-sm title-font text-gray-500 tracking-widest">
                 BRAND NAME
