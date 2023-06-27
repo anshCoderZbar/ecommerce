@@ -52,7 +52,7 @@ const ProductPage = () => {
   return (
     <Layout>
       <div className="text-gray-700 body-font overflow-hidden bg-white">
-        <div className="container md:px-5 lg:px-0 py-4 lg:py-10 pb-10 mx-auto">
+        <div className="container md:px-5 lg:px-0 py-2 lg:py-10 pb-10 mx-auto">
           <div className="mx-auto flex flex-col lg:flex-row justify-center">
             <ReactImageGallery
               showPlayButton={false}
