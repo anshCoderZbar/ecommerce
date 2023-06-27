@@ -12,11 +12,13 @@ import {
 } from "react-icons/bi";
 import { CiHeart } from "react-icons/ci";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 const ProductPage = () => {
   const [pincodeData, setPincodeData] = useState("");
   const router = useRouter();
   const { slug } = router.query;
+
   useEffect(() => {
     if (!slug) {
       router.push("/men");
@@ -46,19 +48,30 @@ const ProductPage = () => {
     },
   ];
 
-  const inputStyle = {
-    border: "1px solid #e6e6e6",
-    padding: "4px 10px",
-    outline: "none",
-    borderRadius: "10px",
+  const [pinCode, setPinCode] = useState("");
+  const [isValid, setIsValid] = useState(true);
+  const [error, setError] = useState("");
+  const handleInputChange = (event) => {
+    setPinCode(event.target.value);
   };
 
-  const cityInput = {
-    border: "none",
-    display: "inline",
-    backgroundColor: "transparent",
-    color: "#000",
-    placeholder: "none",
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setPincodeData("");
+    setError("");
+    const isValidPinCode = validatePinCode(pinCode);
+    setIsValid(isValidPinCode);
+    if (isValidPinCode) {
+      axios
+        .post("/api/pincode", {
+          pincode: pinCode,
+        })
+        .then((res) => setPincodeData(res?.data?.data))
+        .catch((err) => setError(err?.response?.data));
+    }
+  };
+  const validatePinCode = (pinCode) => {
+    return /^\d{6}$/.test(pinCode);
   };
 
   return (
@@ -138,19 +151,37 @@ const ProductPage = () => {
                   </button>
                 </div>
               </div>
-              <div className="py-1 input_container">
-                <label className="block font-semibold my-2">
-                  Enter pincode
-                </label>
-                {/* <Pincode
-                  pincodeInput={inputStyle}
-                  stateInput={cityInput}
-                  invalidError="Invalid pincode"
-                  lengthError="Please check length"
-                  getData={(data) => setPincodeData(data)}
-                  showArea={false}
-                  showCity={false}
-                /> */}
+              <div className="my-5">
+                <form onSubmit={handleSubmit}>
+                  <div className="flex mb-4">
+                    <input
+                      type="text"
+                      placeholder="Enter Pin Code"
+                      value={pinCode}
+                      onChange={handleInputChange}
+                      className={`px-4 py-2 border border-gray-300 rounded-l-md outline-none ${
+                        !isValid && "border-red-500"
+                      } `}
+                    />
+                    <button
+                      type="submit"
+                      className="px-4 bg-red-500 text-white rounded-r-md hover:bg-red-600"
+                    >
+                      Check
+                    </button>
+                  </div>
+                  {pincodeData ? (
+                    <h2>
+                      Delivered to : {pincodeData?.Districtname},
+                      {pincodeData?.statename}
+                    </h2>
+                  ) : (
+                    <h2>{error?.error}</h2>
+                  )}
+                  {!isValid && isValid !== null && (
+                    <p className="text-red-500">Invalid Pin Code</p>
+                  )}
+                </form>
               </div>
               <div class="my-1">
                 <h3 class="text-gray-900 text-lg font-medium mb-3">
