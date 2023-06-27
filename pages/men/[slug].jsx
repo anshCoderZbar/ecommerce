@@ -136,7 +136,7 @@ const ProductPage = () => {
               </div>
               <div className="flex">
                 <div className="w-full lg:w-2/3">
-                  <h2 className="text-xl sm:text-2xl font-medium mb-2">
+                  <h2 className="text-xl sm:text-2xl font-medium mb-2 sm:mb-4">
                     Product Description
                   </h2>
                   <p className="text-gray-700 ">
