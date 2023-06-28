@@ -23,9 +23,9 @@ export default function CartPage() {
   const discountAmount = (subtotal * discountPercentage) / 100;
   const total = subtotal - discountAmount;
 
-  const handleRemoveItem = (itemId) => {
-    console.log(`Removing item with ID ${itemId}`);
-  };
+  // const handleRemoveItem = (itemId) => {
+  //   console.log(`Removing item with ID ${itemId}`);
+  // };
 
   const handlePlaceOrder = () => {
     console.log("Placing order...");
@@ -36,64 +36,64 @@ export default function CartPage() {
       <Layout>
         <div className="bg-white dark:bg-dark-background">
           <div className="container mx-auto px-4 py-8">
-            <div className="grid grid-cols-1  md:grid-cols-[70%,30%] xl:max-w-[80%] gap-4 h-auto mx-auto">
-              <div className="w-full h-fit bg-white border shadow-lg">
+            <div className="mx-auto grid  h-auto grid-cols-1 gap-4 md:grid-cols-[70%,30%] xl:max-w-[80%]">
+              <div className="h-fit w-full border bg-white shadow-lg">
                 {cartItems?.map((elm) => {
                   return (
-                    <div className="p-2 sm:p-6 border-b">
+                    <div className="border-b p-2 sm:p-6">
                       <div className="flex">
-                        <div className="w-28 h-28">
-                          <img src={elm?.image} className="w-full h-full" />
+                        <div className="h-28 w-28">
+                          <img src={elm?.image} className="h-full w-full" />
                         </div>
-                        <div className="mt-3 pt-0 px-2 pb-2 sm:px-6 sm:pb-6 min-h-[112px] max-w-[460px]">
+                        <div className="mt-3 min-h-[112px] max-w-[460px] px-2 pb-2 pt-0 sm:px-6 sm:pb-6">
                           <h2 className="text-sm sm:text-base">{elm?.name}</h2>
-                          <span className="text-sm sm:text-base text-gray-500">
+                          <span className="text-sm text-gray-500 sm:text-base">
                             {elm?.details}
                           </span>
-                          <div className="flex flex-wrap items-center gap-1 sm:gap-3 mt-5">
-                            <span className="text-sm sm:text-base text-gray-400 line-through">
+                          <div className="mt-5 flex flex-wrap items-center gap-1 sm:gap-3">
+                            <span className="text-sm text-gray-400 line-through sm:text-base">
                               {elm?.actualPrice}
                             </span>
-                            <span className="text-base sm:text-xl  font-medium ml-2">
+                            <span className="ml-2 text-base  font-medium sm:text-xl">
                               {elm?.price}
                             </span>
-                            <span className="text-sm sm:text-base text-green-800 font-semibold">
+                            <span className="text-sm font-semibold text-green-800 sm:text-base">
                               50% off
                             </span>
                           </div>
                         </div>
-                        <div className="mt-2 ms-auto hidden sm:block">
+                        <div className="ms-auto mt-2 hidden sm:block">
                           <span className="text-sm">
                             Delivery Date: June 30, 2023
                           </span>
                         </div>
                       </div>
-                      <div className="mt-2 ms-auto block sm:hidden">
+                      <div className="ms-auto mt-2 block sm:hidden">
                         <span className="text-sm">
                           Delivery Date: June 30, 2023
                         </span>
                       </div>
-                      <div className="py-3 flex flex-wrap gap-5">
+                      <div className="flex flex-wrap gap-5 py-3">
                         <div className="flex gap-2">
-                          <button className="w-7 h-7 bg-gradient-to-b from-white to-f9f9f9 inline-block border border-[#c2c2c2] cursor-pointer text-sm rounded-full">
+                          <button className="to-f9f9f9 inline-block h-7 w-7 cursor-pointer rounded-full border border-[#c2c2c2] bg-gradient-to-b from-white text-sm">
                             -
                           </button>
-                          <div className="w-[46px] h-7">
+                          <div className="h-7 w-[46px]">
                             <input
                               type="number"
-                              className="border border-[#c2c2c2] rounded-sm w-full p-1 focus:outline-none text-sm align-middle text-center font-medium"
+                              className="w-full rounded-sm border border-[#c2c2c2] p-1 text-center align-middle text-sm font-medium focus:outline-none"
                               value="1"
                             />
                           </div>
-                          <button className="w-7 h-7 bg-gradient-to-b from-white to-f9f9f9 inline-block border border-[#c2c2c2] cursor-pointer text-sm rounded-full">
+                          <button className="to-f9f9f9 inline-block h-7 w-7 cursor-pointer rounded-full border border-[#c2c2c2] bg-gradient-to-b from-white text-sm">
                             +
                           </button>
                         </div>
                         <div className="flex gap-3">
-                          <button className="text-xs sm:text-base font-medium uppercase">
+                          <button className="text-xs font-medium uppercase sm:text-base">
                             Save for later
                           </button>
-                          <button className="text-xs sm:text-base font-medium uppercase">
+                          <button className="text-xs font-medium uppercase sm:text-base">
                             Remove
                           </button>
                         </div>
@@ -102,33 +102,33 @@ export default function CartPage() {
                   );
                 })}
               </div>
-              <div className="bg-white border dark:bg-dark-background w-full h-fit flex  flex-col gap-3 shadow-md">
-                <h2 className="text-lg py-4 px-6 text-[#878787]  font-semibold border-b border-[#e6e6e6]">
+              <div className="flex h-fit w-full flex-col gap-3 border  bg-white shadow-md dark:bg-dark-background">
+                <h2 className="border-b border-[#e6e6e6] px-6 py-4  text-lg font-semibold text-[#878787]">
                   Price Details
                 </h2>
-                <div className="flex  px-6 justify-between items-center font-medium mb-1">
+                <div className="mb-1  flex items-center justify-between px-6 font-medium">
                   <span className="text-base">Subtotal</span>
                   <span className="text-gray-800">₹{subtotal.toFixed(2)}</span>
                 </div>
-                <div className="flex  px-6 justify-between items-center font-medium mb-1">
+                <div className="mb-1  flex items-center justify-between px-6 font-medium">
                   <span className="text-base">Discount</span>
                   <span className="text-green-600">
                     -₹{discountAmount.toFixed(2)}
                   </span>
                 </div>
-                <div className="flex  px-6 justify-between items-center font-medium mb-1">
+                <div className="mb-1  flex items-center justify-between px-6 font-medium">
                   <span className="text-base">Shipping</span>
                   <span className="text-green-600">Free</span>
                 </div>
-                <div className="flex justify-between items-center py-4 px-6 border-t border-b  border-dashed">
+                <div className="flex items-center justify-between border-b border-t border-dashed px-6  py-4">
                   <span className="text-lg font-semibold">Total</span>
                   <span className="text-lg font-semibold">
                     ${total.toFixed(2)}
                   </span>
                 </div>
-                <div className="py-4 px-6">
+                <div className="px-6 py-4">
                   <button
-                    className=" bg-red-500 w-full mb-4 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+                    className=" mb-4 w-full rounded bg-red-500 px-4 py-2 font-semibold text-white hover:bg-red-600"
                     onClick={handlePlaceOrder}
                   >
                     Place Order
