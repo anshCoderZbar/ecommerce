@@ -36,7 +36,7 @@ export const Modal = (props) => {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel
-                className={`w-full transform overflow-hidden rounded-md bg-[#fff]  text-left align-middle shadow-xl transition-all ${props?.classes}`}
+                className={`w-full transform overflow-hidden rounded-md bg-[#fff] text-left  align-middle shadow-xl transition-all dark:bg-gray-950 ${props?.classes}`}
               >
                 {props?.hasCloseButton ? (
                   <button

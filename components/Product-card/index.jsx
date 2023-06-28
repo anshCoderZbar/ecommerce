@@ -6,30 +6,30 @@ import { BiHeart } from "react-icons/bi";
 export const ProductCard = ({ product }) => {
   const router = useRouter();
   return (
-    <div className="w-full bg-white dark:bg-dark-background cursor-pointer shadow-md rounded-xl duration-500  hover:shadow-xl">
+    <div className="w-full cursor-pointer rounded-xl bg-white shadow-md duration-500 hover:shadow-xl  dark:bg-dark-background">
       <div
         onClick={() =>
           router.push(`/men/${product?.title?.replaceAll(" ", "_")}`)
         }
       >
-        <div className="rounded-md flex justify-center overflow-hidden">
+        <div className="overflow-hidden rounded-md">
           <img
-            src={product?.image}
+            src="https://loremflickr.com/400/400/shirt"
             alt="Product"
-            className="w-44 h-44 rounded-md sm:h-48 sm:w-48 md:h-48 md:w-48 lg:h-60 lg:w-72 xl:w-72 xl:h-60 bg-white dark:bg-dark-background  transition-all hover:scale-110"
+            className="h-full max-h-[400px] w-full max-w-[400px] rounded-md bg-white object-cover transition-all  hover:scale-110 dark:bg-dark-background"
           />
         </div>
         <div className="px-4 py-3">
-          <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-          <p className="text-lg font-bold  truncate block capitalize">
+          <span className="mr-3 text-xs uppercase text-gray-400">Brand</span>
+          <p className="block truncate  text-lg font-bold capitalize">
             {product.title}
           </p>
           <div className="flex items-center">
-            <p className="text-lg font-semibold  cursor-auto my-3">
+            <p className="my-3 cursor-auto  text-lg font-semibold">
               {product.price}
             </p>
             <del>
-              <p className="text-sm text-gray-600 dark:text-gray-200 cursor-auto ml-2">
+              <p className="ml-2 cursor-auto text-sm text-gray-600 dark:text-gray-200">
                 $199
               </p>
             </del>

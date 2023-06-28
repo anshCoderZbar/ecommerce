@@ -32,7 +32,7 @@ body {
 .swiper-button-prev,
 .swiper-button-next {
   color: #000 !important;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.803);
   width: 50px !important;
   height: 140px !important;
   margin-left: 0 !important;
@@ -48,7 +48,8 @@ body {
   }
   @media only screen and (max-width: 550px) {
     width: 30px !important;
-    height: 70px !important;
+    height: 90px !important;
+    top: 59% !important;
     &::after {
       font-size: 20px !important;
     }

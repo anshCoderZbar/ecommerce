@@ -7,7 +7,7 @@ export const SizeChart = () => {
     <div>
       <button
         onClick={() => setIsOpen(true)}
-        className="text-blue-400 text-sm hover:text-red-500 hover:underline"
+        className="text-sm text-blue-400 hover:text-red-500 hover:underline"
       >
         Size Chart
       </button>
@@ -17,77 +17,77 @@ export const SizeChart = () => {
         hasCloseButton={true}
         classes="max-w-2xl"
       >
-        <h4 className="mb-2 border-b py-4 px-5 text-lg font-bold">
+        <h4 className="text-dark mb-2 border-b px-5 py-4 text-lg  font-bold">
           Size Chart
         </h4>
         <table className="min-w-full divide-y divide-gray-200">
           <thead>
             <tr>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Size
               </th>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Chest (in)
               </th>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Waist (in)
               </th>
-              <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
                 Hips (in)
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 ">
             {/* Shirts */}
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">XS</td>
-              <td className="px-6 py-4 whitespace-nowrap">32-34</td>
-              <td className="px-6 py-4 whitespace-nowrap">24-26</td>
-              <td className="px-6 py-4 whitespace-nowrap">34-36</td>
+              <td className="whitespace-nowrap px-6 py-4">XS</td>
+              <td className="whitespace-nowrap px-6 py-4">32-34</td>
+              <td className="whitespace-nowrap px-6 py-4">24-26</td>
+              <td className="whitespace-nowrap px-6 py-4">34-36</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">S</td>
-              <td className="px-6 py-4 whitespace-nowrap">34-36</td>
-              <td className="px-6 py-4 whitespace-nowrap">26-28</td>
-              <td className="px-6 py-4 whitespace-nowrap">36-38</td>
+              <td className="whitespace-nowrap px-6 py-4">S</td>
+              <td className="whitespace-nowrap px-6 py-4">34-36</td>
+              <td className="whitespace-nowrap px-6 py-4">26-28</td>
+              <td className="whitespace-nowrap px-6 py-4">36-38</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">M</td>
-              <td className="px-6 py-4 whitespace-nowrap">36-38</td>
-              <td className="px-6 py-4 whitespace-nowrap">28-30</td>
-              <td className="px-6 py-4 whitespace-nowrap">38-40</td>
+              <td className="whitespace-nowrap px-6 py-4">M</td>
+              <td className="whitespace-nowrap px-6 py-4">36-38</td>
+              <td className="whitespace-nowrap px-6 py-4">28-30</td>
+              <td className="whitespace-nowrap px-6 py-4">38-40</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">L</td>
-              <td className="px-6 py-4 whitespace-nowrap">38-40</td>
-              <td className="px-6 py-4 whitespace-nowrap">30-32</td>
-              <td className="px-6 py-4 whitespace-nowrap">40-42</td>
+              <td className="whitespace-nowrap px-6 py-4">L</td>
+              <td className="whitespace-nowrap px-6 py-4">38-40</td>
+              <td className="whitespace-nowrap px-6 py-4">30-32</td>
+              <td className="whitespace-nowrap px-6 py-4">40-42</td>
             </tr>
 
             {/* Jeans */}
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">28</td>
-              <td className="px-6 py-4 whitespace-nowrap">28</td>
-              <td className="px-6 py-4 whitespace-nowrap">26-28</td>
-              <td className="px-6 py-4 whitespace-nowrap">36-38</td>
+              <td className="whitespace-nowrap px-6 py-4">28</td>
+              <td className="whitespace-nowrap px-6 py-4">28</td>
+              <td className="whitespace-nowrap px-6 py-4">26-28</td>
+              <td className="whitespace-nowrap px-6 py-4">36-38</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">30</td>
-              <td className="px-6 py-4 whitespace-nowrap">30</td>
-              <td className="px-6 py-4 whitespace-nowrap">28-30</td>
-              <td className="px-6 py-4 whitespace-nowrap">38-40</td>
+              <td className="whitespace-nowrap px-6 py-4">30</td>
+              <td className="whitespace-nowrap px-6 py-4">30</td>
+              <td className="whitespace-nowrap px-6 py-4">28-30</td>
+              <td className="whitespace-nowrap px-6 py-4">38-40</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">32</td>
-              <td className="px-6 py-4 whitespace-nowrap">32</td>
-              <td className="px-6 py-4 whitespace-nowrap">30-32</td>
-              <td className="px-6 py-4 whitespace-nowrap">40-42</td>
+              <td className="whitespace-nowrap px-6 py-4">32</td>
+              <td className="whitespace-nowrap px-6 py-4">32</td>
+              <td className="whitespace-nowrap px-6 py-4">30-32</td>
+              <td className="whitespace-nowrap px-6 py-4">40-42</td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap">34</td>
-              <td className="px-6 py-4 whitespace-nowrap">34</td>
-              <td className="px-6 py-4 whitespace-nowrap">32-34</td>
-              <td className="px-6 py-4 whitespace-nowrap">42-44</td>
+              <td className="whitespace-nowrap px-6 py-4">34</td>
+              <td className="whitespace-nowrap px-6 py-4">34</td>
+              <td className="whitespace-nowrap px-6 py-4">32-34</td>
+              <td className="whitespace-nowrap px-6 py-4">42-44</td>
             </tr>
           </tbody>
         </table>

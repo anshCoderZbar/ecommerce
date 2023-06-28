@@ -44,7 +44,7 @@ export const Pincode = () => {
   };
   return (
     <form>
-      <div className="flex mb-2 relative max-w-max">
+      <div className="relative mb-2 flex max-w-max">
         <input
           type="number"
           placeholder="Enter Pin Code"
@@ -52,7 +52,7 @@ export const Pincode = () => {
           onChange={handleInputChange}
           disabled={pincodeData ? true : false}
           maxLength={6}
-          className={`px-4 py-2 border w-full sm:w-64 border-[#e6e6e6] rounded outline-none`}
+          className={`w-full rounded border border-[#e6e6e6] bg-transparent px-4 py-2 outline-none dark:text-gray-100 sm:w-64 `}
         />
         {loading ? (
           <div className="absolute right-0 top-1">
@@ -63,7 +63,7 @@ export const Pincode = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="px-4 absolute right-0 inset-y-0.5 text-red-500 font-medium rounded-r-md "
+              className="absolute inset-y-0.5 right-0 rounded-r-md px-4 font-medium text-red-500"
             >
               Check
             </button>
@@ -73,7 +73,7 @@ export const Pincode = () => {
           <button
             type="submit"
             onClick={handleChange}
-            className="px-4 absolute right-0 inset-y-0.5 text-red-500 font-medium rounded-r-md "
+            className="absolute inset-y-0.5 right-0 rounded-r-md px-4 font-medium text-red-500 "
           >
             Change
           </button>
@@ -87,7 +87,7 @@ export const Pincode = () => {
         <h2 className="text-red-500">{error?.error}</h2>
       )}
       {!pincodeData && (
-        <span className="text-xs">
+        <span className="text-xs dark:text-gray-100">
           Please enter PIN code to check delivery availability
         </span>
       )}

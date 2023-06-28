@@ -15,21 +15,32 @@ export const Banner = () => {
       autoplay={{
         delay: 1500,
       }}
+      className="container mx-auto "
       pagination={{ clickable: true }}
       navigation
     >
       {BannerImg?.map((image, i) => {
         return (
           <SwiperSlide key={i}>
-            <Image
+            {/* <Image
               src={image?.img}
               alt="banner1"
               loading="lazy"
-              className="w-full h-auto aspect-video max-w-full lg:h-[500px]"
-            />
+              className=" h-auto  w-full py-2"
+            /> */}
+            <img
+              // src="https://picsum.photos/1400/500"
+              src="https://loremflickr.com/1400/500/shopping"
+              alt="banner1"
+              loading="lazy"
+              className=" h-auto w-full  py-2"
+            />{" "}
           </SwiperSlide>
         );
       })}
     </Swiper>
   );
 };
+
+{
+}

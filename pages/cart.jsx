@@ -13,6 +13,26 @@ export default function CartPage() {
       quantity: 9,
       image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
     },
+    {
+      id: 2,
+      name: "Product 1",
+      category: "Category 1",
+      details: "product-details",
+      price: 10.99,
+      actualPrice: 20.99,
+      quantity: 9,
+      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    },
+    {
+      id: 3,
+      name: "Product 1",
+      category: "Category 1",
+      details: "product-details",
+      price: 10.99,
+      actualPrice: 20.99,
+      quantity: 9,
+      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    },
   ];
 
   const subtotal = cartItems.reduce(
@@ -37,7 +57,7 @@ export default function CartPage() {
         <div className="bg-white dark:bg-dark-background">
           <div className="container mx-auto px-4 py-8">
             <div className="mx-auto grid  h-auto grid-cols-1 gap-4 md:grid-cols-[70%,30%] xl:max-w-[80%]">
-              <div className="h-fit w-full border bg-white shadow-lg">
+              <div className="h-fit w-full border shadow-lg">
                 {cartItems?.map((elm) => {
                   return (
                     <div className="border-b p-2 sm:p-6">
@@ -47,17 +67,17 @@ export default function CartPage() {
                         </div>
                         <div className="mt-3 min-h-[112px] max-w-[460px] px-2 pb-2 pt-0 sm:px-6 sm:pb-6">
                           <h2 className="text-sm sm:text-base">{elm?.name}</h2>
-                          <span className="text-sm text-gray-500 sm:text-base">
+                          <span className="da text-sm text-gray-500 dark:text-gray-100 sm:text-base">
                             {elm?.details}
                           </span>
                           <div className="mt-5 flex flex-wrap items-center gap-1 sm:gap-3">
-                            <span className="text-sm text-gray-400 line-through sm:text-base">
+                            <span className="text-sm text-gray-400 line-through dark:text-gray-100 sm:text-base">
                               {elm?.actualPrice}
                             </span>
-                            <span className="ml-2 text-base  font-medium sm:text-xl">
+                            <span className="ml-2 text-base font-medium sm:text-xl">
                               {elm?.price}
                             </span>
-                            <span className="text-sm font-semibold text-green-800 sm:text-base">
+                            <span className="text-sm font-semibold text-green-800 dark:text-green-600 sm:text-base">
                               50% off
                             </span>
                           </div>
@@ -103,12 +123,14 @@ export default function CartPage() {
                 })}
               </div>
               <div className="flex h-fit w-full flex-col gap-3 border  bg-white shadow-md dark:bg-dark-background">
-                <h2 className="border-b border-[#e6e6e6] px-6 py-4  text-lg font-semibold text-[#878787]">
+                <h2 className="border-b border-[#e6e6e6] px-6 py-4  text-lg font-semibold ">
                   Price Details
                 </h2>
                 <div className="mb-1  flex items-center justify-between px-6 font-medium">
                   <span className="text-base">Subtotal</span>
-                  <span className="text-gray-800">₹{subtotal.toFixed(2)}</span>
+                  <span className="text-gray-800 dark:text-gray-100">
+                    ₹{subtotal.toFixed(2)}
+                  </span>
                 </div>
                 <div className="mb-1  flex items-center justify-between px-6 font-medium">
                   <span className="text-base">Discount</span>

@@ -51,77 +51,79 @@ const ProductPage = () => {
 
   return (
     <Layout>
-      <div className="text-gray-700 body-font overflow-hidden bg-white">
-        <div className="container md:px-5 lg:px-0 py-2 lg:py-10 pb-10 mx-auto">
-          <div className="mx-auto flex flex-col lg:flex-row justify-center">
+      <div className="body-font overflow-hidden bg-white text-gray-700 dark:bg-dark-background">
+        <div className="container mx-auto py-2 pb-10 md:px-5 lg:px-0 lg:py-10">
+          <div className="mx-auto flex flex-col justify-center lg:flex-row">
             <ReactImageGallery
               showPlayButton={false}
               showNav={false}
               autoPlay={false}
               items={images}
             />
-            <div className="px-5 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <h2 className="text-sm title-font text-gray-500 tracking-widest">
+            <div className="mt-6 w-full px-5 lg:mt-0 lg:py-6 lg:pl-10">
+              <h2 className="title-font text-sm tracking-widest text-gray-500 dark:text-gray-100">
                 BRAND NAME
               </h2>
-              <h1 className="text-gray-900 text-2xl sm:text-3xl title-font font-medium mb-1">
+              <h1 className="title-font mb-1 text-2xl font-medium text-gray-900 dark:text-gray-50 sm:text-3xl">
                 {slug?.replaceAll("_", " ")}
               </h1>
-              <div className="flex  mb-4">
-                <span className="flex items-center text-red-500">
+              <div className="mb-4  flex">
+                <span className="flex items-center text-red-500 ">
                   <BiSolidStar />
                   <BiSolidStar />
                   <BiSolidStar />
                   <BiSolidStar />
                   <BiSolidStarHalf />
-                  <span className="text-gray-600 ml-3">4 Reviews</span>
+                  <span className="ml-3 text-gray-600 dark:text-gray-100">
+                    4 Reviews
+                  </span>
                 </span>
-                <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+                <span className="ml-3 flex border-l-2 border-gray-200 py-2 pl-3 dark:text-gray-100">
                   <BiShareAlt />
                 </span>
               </div>
-              <div className="flex mt-6 items-center mb-5">
+              <div className="mb-5 mt-6 flex items-center">
                 <div className="flex">
-                  <span className="mr-3">Color</span>
-                  <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                  <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                  <button className="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"></button>
+                  <span className="mr-3 dark:text-gray-100">Color</span>
+                  <button className="h-6 w-6 rounded-full border-2 border-gray-300 focus:outline-none"></button>
+                  <button className="ml-1 h-6 w-6 rounded-full border-2 border-gray-300 bg-gray-700 focus:outline-none"></button>
+                  <button className="ml-1 h-6 w-6 rounded-full border-2 border-gray-300 bg-red-500 focus:outline-none"></button>
                 </div>
-                <div className="flex ml-6 items-center">
+                <div className="ml-6 flex items-center">
                   <span className="mr-3">Size</span>
                   <div className="relative">
-                    <select className="rounded border appearance-none border-gray-400 py-2 focus:outline-none text-base pl-3 pr-10">
+                    <select className="appearance-none rounded border border-gray-900 py-2 pl-3 pr-10 text-base focus:outline-none dark:bg-dark-background dark:text-gray-100">
                       <option>SM</option>
                       <option>M</option>
                       <option>L</option>
                       <option>XL</option>
                     </select>
-                    <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
+                    <span className="pointer-events-none absolute right-0 top-0 flex h-full w-10 items-center justify-center text-center text-gray-600 dark:text-gray-100">
                       <BiChevronDown />
                     </span>
                   </div>
                 </div>
               </div>
               <div className="flex items-center ">
-                <h2 className="title-font font-medium text-2xl text-gray-900">
+                <h2 className="title-font text-2xl font-medium text-gray-900 dark:text-gray-100">
                   $58.00
                 </h2>
-                <p className="text-xl text-gray-500 dark:text-gray-200 ml-3">
+                <p className="ml-3 text-xl text-gray-500 dark:text-gray-200">
                   MRP <del>$199</del>
                 </p>
-                <h2 className="text-green-500  ml-3">70% off</h2>
+                <h2 className="ml-3  text-green-500">70% off</h2>
               </div>
-              <span className="font-medium text-sm block text-green-700">
+              <span className="block text-sm font-medium text-green-700 dark:text-green-500">
                 inclusive of all taxes
               </span>
-              <div className="flex items-center mt-6 border-b-[1px] pb-6 border-[#e6e6e6]">
-                <button class="text-sm sm:text-base bg-red-500 hover:bg-red-700 text-white flex items-center gap-1  sm:gap-2 py-2 px-6  sm:py-3 sm:px-14 rounded mr-2 ">
+              <div className="mt-6 flex items-center border-b-[1px] border-[#e6e6e6] pb-6">
+                <button class="mr-2 flex items-center gap-1 rounded bg-red-500 px-6 py-2  text-sm text-white hover:bg-red-700   dark:bg-red-900 dark:hover:bg-red-950 sm:gap-2 sm:px-14 sm:py-3 sm:text-base ">
                   <span className="text-sm sm:text-xl">
                     <CiShoppingCart />
                   </span>
                   Add to Cart
                 </button>
-                <button class="text-sm sm:text-base border border-[#e6e6e6] flex items-center gap-1 sm:gap-1 py-2 px-2 sm:py-3 sm:px-5 hover:bg-gray-50 rounded">
+                <button class="dark: flex items-center gap-1 rounded border border-[#e6e6e6] px-2 py-2 text-sm hover:bg-gray-50 dark:border-gray-900 dark:text-gray-100 dark:hover:bg-gray-900 sm:gap-1 sm:px-5 sm:py-3 sm:text-base">
                   <span className="text-sm sm:text-xl">
                     <CiHeart />
                   </span>
@@ -136,20 +138,20 @@ const ProductPage = () => {
               </div>
               <div className="flex">
                 <div className="w-full lg:w-2/3">
-                  <h2 className="text-xl sm:text-2xl font-medium mb-2 sm:mb-4">
+                  <h2 className="mb-2 text-xl font-medium dark:text-gray-50 sm:mb-4 sm:text-2xl">
                     Product Description
                   </h2>
-                  <p className="text-gray-700 ">
+                  <p className="text-gray-700 dark:text-gray-100">
                     Light shade, no fade blue jeans with a clean look. These
                     slim fit, mid-rise jeans are made from a non-stretchable
                     cotton blend fabric. They feature a classic 5-pocket design
                     and have a regular length.
                   </p>
 
-                  <h2 className="text-xl sm:text-2xl font-medium my-2">
+                  <h2 className="my-2 text-xl font-medium dark:text-gray-50 sm:text-2xl">
                     Size & Fit
                   </h2>
-                  <ul className="list-disc list-inside">
+                  <ul className="list-inside list-disc dark:text-gray-100">
                     <li className="mb-2">
                       <span className="font-semibold">Fit:</span> Slim Fit
                     </li>
@@ -163,10 +165,10 @@ const ProductPage = () => {
                     </li>
                   </ul>
 
-                  <h2 className="text-xl sm:text-2xl font-medium my-2">
+                  <h2 className="my-2 text-xl font-medium dark:text-gray-50 sm:text-2xl">
                     Material & Care
                   </h2>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 dark:text-gray-100">
                     <span className="font-semibold">Material:</span> Cotton
                     Blend
                     <br />
@@ -175,15 +177,15 @@ const ProductPage = () => {
                 </div>
               </div>
               <div className="my-1">
-                <h3 className="text-gray-900 text-lg font-medium mb-3">
+                <h3 className="mb-3 text-lg font-medium text-gray-900 dark:text-gray-50">
                   Return and Replacement Policy
                 </h3>
-                <p className="leading-relaxed flex items-center">
+                <p className="flex items-center leading-relaxed dark:text-gray-100">
                   We offer a 10-day return and replacement policy for all our
                   products.
                   <span
                     onClick={() => setIsOpen(true)}
-                    className="cursor-pointer mx-1"
+                    className="mx-1 cursor-pointer"
                   >
                     <AiOutlineInfoCircle />
                   </span>
@@ -193,10 +195,10 @@ const ProductPage = () => {
                     hasCloseButton={true}
                     classes="max-w-2xl"
                   >
-                    <h4 className="mb-2 border-b py-4 px-5 text-lg font-medium">
+                    <h4 className="mb-2 border-b px-5 py-4 text-lg font-medium">
                       Replacement Policy
                     </h4>
-                    <div className="px-5 py-4">
+                    <div className="px-5 py-4 ">
                       If you are not satisfied with your purchase, you can
                       return the item within 10 days of delivery for a full
                       refund or a replacement. Please ensure that the item is
