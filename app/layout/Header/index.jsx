@@ -20,39 +20,40 @@ export const Header = () => {
   }, [active]);
 
   return (
-    <nav className="py-6 bg-white shadow-lg w-full  dark:bg-dark-background dark:text-white">
+    <nav className="w-full bg-white py-6 shadow-lg  dark:bg-dark-background dark:text-white">
+      {active && <div className="fixed inset-0 bg-black opacity-50"></div>}
       <div
-        className={`container mx-auto flex justify-between items-center gap-4 ${
+        className={`container mx-auto flex items-center justify-between gap-4 ${
           openInput ? "hidden" : "block"
         }`}
       >
         <div className="flex items-center gap-1">
           <div
-            className="block lg:hidden z-[99999] ml-2"
+            className="z-[99999] ml-2 block lg:hidden"
             onClick={() => setActive(!active)}
           >
-            <div className="h-[2px] w-7 my-2 rounded-full bg-black dark:bg-white"></div>
-            <div className="h-[2px] w-7 my-2 rounded-full bg-black dark:bg-white"></div>
-            <div className="h-[2px] w-7 my-2 rounded-full bg-black dark:bg-white"></div>
+            <div className="my-2 h-[2px] w-7 rounded-full bg-black dark:bg-white"></div>
+            <div className="my-2 h-[2px] w-7 rounded-full bg-black dark:bg-white"></div>
+            <div className="my-2 h-[2px] w-7 rounded-full bg-black dark:bg-white"></div>
           </div>
           <Link href={"/"} className="logo">
             logo
           </Link>
         </div>
         <div
-          className={`absolute top-0 left-0 w-full z-50 sm:w-[50%] bg-white dark:bg-dark-background  h-full flex items-center justify-center  ${
+          className={`absolute left-0 top-0 z-50 flex h-full w-full items-center  justify-center bg-white dark:bg-dark-background sm:w-[50%]  ${
             active
-              ? "translate-x-[0%] transition-all duration-500 shadow-lg overflow-hidden "
+              ? "translate-x-[0%] overflow-hidden shadow-lg transition-all duration-500 "
               : "-translate-x-[100%] transition-all duration-500"
-          } lg:static lg:top-auto lg:left-auto lg:w-auto lg:h-auto lg:translate-x-0`}
+          } lg:static lg:left-auto lg:top-auto lg:h-auto lg:w-auto lg:translate-x-0`}
         >
-          <ul className="flex flex-col lg:flex-row items-center gap-14 lg:gap-4 xl:gap-10 justify-center">
+          <ul className="flex flex-col items-center justify-center gap-14 lg:flex-row lg:gap-4 xl:gap-10">
             {HeaderRoutes &&
               HeaderRoutes?.map((routes) => {
                 return (
                   <li
                     key={routes?.id}
-                    className="cursor-pointer uppercase font-semibold text-base hover:text-black dark:hover:text-white after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:after:scale-x-100 hover:after:border-red-700"
+                    className="cursor-pointer text-base font-semibold uppercase after:block after:origin-center after:scale-x-0 after:border-b-2 after:transition-all after:duration-500 after:ease-in-out hover:text-black hover:after:scale-x-100 hover:after:border-red-700 dark:hover:text-white"
                   >
                     <Link href={routes?.slug}> {routes?.name}</Link>
                   </li>
@@ -64,35 +65,35 @@ export const Header = () => {
         <div className="relative hidden md:block">
           <input
             type="text"
-            className=" border-[1px] p-1 w-full md:w-[350px] lg:w-[300px] xl:w-[500px] border-[#e6e6e6] pl-10 px-3 rounded-md bg-gray-100 focus:outline-none focus:bg-white placeholder:text-sm dark:dark:bg-dark-background"
+            className=" w-full rounded-md border-[1px] border-[#e6e6e6] bg-gray-100 p-1 px-3 pl-10 placeholder:text-sm focus:bg-white focus:outline-none dark:dark:bg-dark-background md:w-[350px] lg:w-[300px] xl:w-[500px]"
             placeholder="Search for products"
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 ">
             <CiSearch />
           </div>
         </div>
-        <div className="flex  items-center  bg-white dark:bg-dark-background gap-3 sm:gap-5  md:gap-8 text-xl mr-5">
+        <div className="mr-5  flex  items-center gap-3 bg-white text-xl  dark:bg-dark-background sm:gap-5 md:gap-8">
           <div
-            className="flex items-center flex-col md:hidden"
+            className="flex flex-col items-center md:hidden"
             onClick={() => setOpenInput(true)}
           >
             <CiSearch />
-            <span className="text-xs sm:text-sm font-semibold">Search</span>
+            <span className="text-xs font-semibold sm:text-sm">Search</span>
           </div>
-          <div className="flex items-center flex-col cursor-pointer">
+          <div className="flex cursor-pointer flex-col items-center">
             <Link href="/cart" className="relative z-0 ">
-              <span className="h-1 w-1 flex justify-center -top-1 -right-2 items-center bg-red-500 text-xs text-white p-2 rounded-full absolute ">
+              <span className="absolute -right-2 -top-1 flex h-1 w-1 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white ">
                 0
               </span>
               <CiShoppingCart />
             </Link>
-            <span className="text-xs sm:text-sm font-semibold">Cart</span>
+            <span className="text-xs font-semibold sm:text-sm">Cart</span>
           </div>
-          <div className="flex items-center flex-col cursor-pointer">
+          <div className="flex cursor-pointer flex-col items-center">
             <Profile />
           </div>
           <select
-            className="bg-transparent border rounded-lg p-1 outline-none text-sm cursor-pointer"
+            className="cursor-pointer rounded-lg border bg-transparent p-1 text-sm outline-none"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
           >
@@ -120,9 +121,9 @@ export const Header = () => {
       <div
         className={` ${
           openInput ? "block" : "hidden"
-        } flex items-center  mx-5 sm:m-0 gap-5 `}
+        } mx-5 flex  items-center gap-5 sm:m-0 `}
       >
-        <div className=" flex items-center gap-5  w-full">
+        <div className=" flex w-full items-center  gap-5">
           <div onClick={() => setOpenInput(false)}>
             <BiArrowBack />
           </div>

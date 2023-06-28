@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Layout } from "app/layout";
-import { MenFilter } from "app/common/men/MenFilter";
+import { MenFilterData } from "mock/men/Filter";
+
 import { BiFilter } from "react-icons/bi";
 import { ProductCard } from "components/Product-card";
+import { SideFilter } from "components/Side-filter";
 
 export default function Men() {
   const [products, setProducts] = useState([]);
@@ -21,24 +23,28 @@ export default function Men() {
         <div className="bg-white dark:bg-dark-background">
           <div className="container mx-auto">
             <div className="grid xl:grid-cols-[25%,75%]">
-              <MenFilter active={active} setActive={setActive} />
+              <SideFilter
+                active={active}
+                setActive={setActive}
+                filterData={MenFilterData}
+              />
               <div className="mt-8">
-                <div className="flex  items-center justify-between xl:justify-center pr-4">
-                  <h1 className="font-semibold m-2 mb-4  text-base sm:text-2xl md:text-4xl text-center capitalize">
+                <div className="flex  items-center justify-between pr-4 xl:justify-center">
+                  <h1 className="m-2 mb-4 text-center  text-base font-semibold capitalize sm:text-2xl md:text-4xl">
                     Explore Our Latest Collection
                   </h1>
                   <div
                     onClick={() => setActive(true)}
-                    className="text-4xl block xl:hidden  cursor-pointer"
+                    className="block cursor-pointer text-4xl  xl:hidden"
                   >
                     <BiFilter />
                   </div>
                 </div>
                 <div
-                  className={` grid px-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5 py-6 md:px-0`}
+                  className={` grid grid-cols-1 gap-5 px-5 py-6  sm:grid-cols-2 md:px-0 lg:grid-cols-3`}
                 >
-                  {products?.map((product) => {
-                    return <ProductCard product={product} />;
+                  {products?.map((product, index) => {
+                    return <ProductCard product={product} key={index} />;
                   })}
                 </div>
               </div>

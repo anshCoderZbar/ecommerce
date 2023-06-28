@@ -3,7 +3,7 @@ import React from "react";
 
 import { BiHeart } from "react-icons/bi";
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, index }) => {
   const router = useRouter();
   return (
     <div className="w-full cursor-pointer rounded-xl bg-white shadow-md duration-500 hover:shadow-xl  dark:bg-dark-background">

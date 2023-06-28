@@ -36,7 +36,7 @@ export const ProductCategories = (props) => {
             key={i}
             className=" bg-red overflow-hidden  dark:bg-dark-background"
           >
-            <CategoryCard data={data} />
+            <CategoryCard data={data} key={i} />
           </SwiperSlide>
         );
       })}

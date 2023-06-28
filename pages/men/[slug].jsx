@@ -20,11 +20,6 @@ const ProductPage = () => {
   const router = useRouter();
   const { slug } = router.query;
   const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    if (!slug) {
-      router.push("/men");
-    } else return;
-  }, []);
 
   const images = [
     {
@@ -117,13 +112,13 @@ const ProductPage = () => {
                 inclusive of all taxes
               </span>
               <div className="mt-6 flex items-center border-b-[1px] border-[#e6e6e6] pb-6">
-                <button class="mr-2 flex items-center gap-1 rounded bg-red-500 px-6 py-2  text-sm text-white hover:bg-red-700   dark:bg-red-900 dark:hover:bg-red-950 sm:gap-2 sm:px-14 sm:py-3 sm:text-base ">
+                <button className="mr-2 flex items-center gap-1 rounded bg-red-500 px-6 py-2  text-sm text-white hover:bg-red-700   dark:bg-red-900 dark:hover:bg-red-950 sm:gap-2 sm:px-14 sm:py-3 sm:text-base ">
                   <span className="text-sm sm:text-xl">
                     <CiShoppingCart />
                   </span>
                   Add to Cart
                 </button>
-                <button class="dark: flex items-center gap-1 rounded border border-[#e6e6e6] px-2 py-2 text-sm hover:bg-gray-50 dark:border-gray-900 dark:text-gray-100 dark:hover:bg-gray-900 sm:gap-1 sm:px-5 sm:py-3 sm:text-base">
+                <button className="dark: flex items-center gap-1 rounded border border-[#e6e6e6] px-2 py-2 text-sm hover:bg-gray-50 dark:border-gray-900 dark:text-gray-100 dark:hover:bg-gray-900 sm:gap-1 sm:px-5 sm:py-3 sm:text-base">
                   <span className="text-sm sm:text-xl">
                     <CiHeart />
                   </span>
