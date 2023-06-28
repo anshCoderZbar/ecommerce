@@ -9,7 +9,7 @@ export const ProductCard = ({ product, index }) => {
     <div className="w-full cursor-pointer rounded-xl bg-white shadow-md duration-500 hover:shadow-xl  dark:bg-dark-background">
       <div
         onClick={() =>
-          router.push(`/men/${product?.title?.replaceAll(" ", "_")}`)
+          router.push(`/product/${product?.title?.replaceAll(" ", "_")}`)
         }
       >
         <div className="overflow-hidden rounded-md">

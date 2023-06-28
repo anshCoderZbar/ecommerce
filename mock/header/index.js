@@ -7,20 +7,15 @@ export const HeaderRoutes = [
   {
     id: 2,
     name: "women",
-    slug: "/men",
+    slug: "/women",
   },
   {
     id: 3,
     name: "kids",
-    slug: "/men",
+    slug: "/kids",
   },
   {
     id: 4,
-    name: "beauty",
-    slug: "/men",
-  },
-  {
-    id: 5,
     name: "accessories",
     slug: "/men",
   },

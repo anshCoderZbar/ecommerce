@@ -1,32 +1,37 @@
-export const MenFilterData = [
+export const WomenFilterData = [
   {
     id: 1,
-    name: "category",
+    name: "Category",
     filters: [
       {
         id: 1,
-        name: "jeans",
-        slug: "jeans",
+        name: "Dresses",
+        slug: "dresses",
       },
       {
         id: 2,
-        name: "t-shirt",
-        slug: "t-shirt",
+        name: "Tops",
+        slug: "tops",
       },
       {
         id: 3,
-        name: "shirt",
-        slug: "shirt",
+        name: "Bottoms",
+        slug: "bottoms",
       },
       {
         id: 4,
-        name: "shoes",
-        slug: "shoes",
+        name: "Outerwear",
+        slug: "outerwear",
       },
       {
         id: 5,
-        name: "sweatshirt",
-        slug: "sweatshirt",
+        name: "Activewear",
+        slug: "activewear",
+      },
+      {
+        id: 6,
+        name: "Accessories",
+        slug: "accessories",
       },
     ],
   },

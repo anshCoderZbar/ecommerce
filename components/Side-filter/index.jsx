@@ -1,13 +1,73 @@
-import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { FcClearFilters } from "react-icons/fc";
 import { RxCross2 } from "react-icons/rx";
 
 export const SideFilter = ({ filterData, active, setActive }) => {
+  const router = useRouter();
+  const [checkboxData, setCheckboxData] = useState({});
   useEffect(() => {
     active
       ? (document.documentElement.style.overflowY = "hidden")
       : (document.documentElement.style.overflowY = "auto");
   }, [active]);
+
+  // const handleCheckboxChange = (e) => {
+  //   e.stopPropagation();
+  //   const { name, value, checked } = e.target;
+
+  //   setCheckboxData((previousData) => {
+  //     if (checked) {
+  //       if (!previousData[name]) {
+  //         return {
+  //           ...previousData,
+  //           [name]: [value],
+  //         };
+  //       }
+
+  //       if (!previousData[name]?.includes(value)) {
+  //         return {
+  //           ...previousData,
+  //           [name]: [...previousData[name], value],
+  //         };
+  //       }
+  //     } else {
+  //       if (previousData[name] && previousData[name]?.includes(value)) {
+  //         return {
+  //           ...previousData,
+  //           [name]: previousData[name].filter((item) => item !== value),
+  //         };
+  //       }
+  //     }
+
+  //     return previousData;
+  //   });
+  // };
+  const handleCheckboxChange = (e) => {
+    e.stopPropagation();
+    const { name, value, checked } = e.target;
+
+    setCheckboxData((previousData) => {
+      const updatedData = new Set(previousData[name] || []);
+
+      if (checked) {
+        updatedData.add(value);
+      } else {
+        updatedData.delete(value);
+      }
+
+      return {
+        ...previousData,
+        [name]: Array.from(updatedData),
+      };
+    });
+  };
+
+  const handleApply = (e) => {
+    console.log(checkboxData);
+    e.preventDefault();
+  };
+
   return (
     <div
       className={`${
@@ -44,17 +104,31 @@ export const SideFilter = ({ filterData, active, setActive }) => {
                   <ul className="m-4">
                     {filterGroup?.filters?.length >= 1 &&
                       filterGroup?.filters?.map((elm) => {
+                        const checkboxName = filterGroup?.name
+                          ?.replaceAll(" ", "_")
+                          .toLowerCase();
+                        const isChecked = checkboxData[checkboxName]?.includes(
+                          elm?.slug
+                        );
+
                         return (
                           <li key={elm.id} className="mb-2 cursor-pointer">
                             <input
-                              type="radio"
-                              name="category"
-                              className="mr-2 leading-tight"
-                              id={`category-${1}`}
+                              type="checkbox"
+                              name={checkboxName}
+                              className="mr-2 h-4 w-4 leading-tight"
+                              onChange={handleCheckboxChange}
+                              checked={isChecked}
+                              value={elm?.slug}
+                              id={filterGroup?.name
+                                ?.replaceAll(" ", "_")
+                                .toLowerCase()}
                             />
                             <label
-                              className=" text-base font-medium capitalize"
-                              htmlFor={`category-${1}`}
+                              className="text-base font-medium capitalize"
+                              htmlFor={filterGroup?.name
+                                ?.replaceAll(" ", "_")
+                                .toLowerCase()}
                             >
                               {elm?.name}
                             </label>
@@ -65,6 +139,14 @@ export const SideFilter = ({ filterData, active, setActive }) => {
                 </div>
               );
             })}
+          <div className="mx-14 py-6 pb-24">
+            <button
+              onClick={handleApply}
+              className="rounded-full bg-red-500 px-6 py-2 text-white hover:bg-red-700 dark:bg-red-900 dark:hover:bg-red-950"
+            >
+              Apply
+            </button>
+          </div>
         </div>
       </div>
     </div>

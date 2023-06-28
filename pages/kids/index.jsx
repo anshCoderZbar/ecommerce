@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Layout } from "app/layout";
-import { MenFilterData } from "mock/men/Filter";
 
 import { BiFilter } from "react-icons/bi";
 import { ProductCard } from "components/Product-card";
 import { SideFilter } from "components/Side-filter";
+import { KidsFilterData } from "mock/men/KidesFilter";
 
-export default function MenSlug() {
+export default function Kids() {
   const [products, setProducts] = useState([]);
+
   const [active, setActive] = useState(false);
 
   useEffect(() => {
@@ -25,12 +26,12 @@ export default function MenSlug() {
               <SideFilter
                 active={active}
                 setActive={setActive}
-                filterData={MenFilterData}
+                filterData={KidsFilterData}
               />
               <div className="mt-8">
                 <div className="flex  items-center justify-between pr-4 xl:justify-center">
                   <h1 className="m-2 mb-4 text-center  text-base font-semibold capitalize sm:text-2xl md:text-4xl">
-                    Explore Our Latest Collection
+                    Explore Our Latest Kids Collection
                   </h1>
                   <div
                     onClick={() => setActive(true)}
