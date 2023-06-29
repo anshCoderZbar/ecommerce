@@ -16,7 +16,7 @@ export const ProductCard = ({ product, index }) => {
           <img
             src="https://loremflickr.com/400/400/shirt"
             alt="Product"
-            className="h-full max-h-[400px] w-full max-w-[400px] rounded-md bg-white object-cover transition-all  hover:scale-110 dark:bg-dark-background"
+            className="h-full max-h-[400px] w-full  rounded-md bg-white object-cover transition-all  hover:scale-110 dark:bg-dark-background"
           />
         </div>
         <div className="px-4 py-3">

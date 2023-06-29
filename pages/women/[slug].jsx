@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Layout } from "app/layout";
-import { MenFilterData } from "mock/men/Filter";
 
 import { BiFilter } from "react-icons/bi";
 import { ProductCard } from "components/Product-card";
 import { SideFilter } from "components/Side-filter";
 import { useRouter } from "next/router";
+import { WomenFilterData } from "mock/men/WomenFilter";
 
 export default function MenSlug() {
   const router = useRouter();
@@ -27,7 +27,7 @@ export default function MenSlug() {
               <SideFilter
                 active={active}
                 setActive={setActive}
-                filterData={MenFilterData}
+                filterData={WomenFilterData}
               />
               <div className="mt-8">
                 <div className="flex  items-center justify-between pr-4 xl:justify-center">

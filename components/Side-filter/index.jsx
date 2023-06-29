@@ -2,9 +2,11 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { FcClearFilters } from "react-icons/fc";
 import { RxCross2 } from "react-icons/rx";
+import { object } from "yup";
 
 export const SideFilter = ({ filterData, active, setActive }) => {
   const router = useRouter();
+  const { slug } = router.query;
   const [checkboxData, setCheckboxData] = useState({});
   useEffect(() => {
     active
@@ -43,6 +45,7 @@ export const SideFilter = ({ filterData, active, setActive }) => {
   //     return previousData;
   //   });
   // };
+
   const handleCheckboxChange = (e) => {
     e.stopPropagation();
     const { name, value, checked } = e.target;
@@ -64,9 +67,30 @@ export const SideFilter = ({ filterData, active, setActive }) => {
   };
 
   const handleApply = (e) => {
-    console.log(checkboxData);
     e.preventDefault();
+    const searchQuery = Object.entries(checkboxData)
+      .map(([key, value]) => `${key}=${value.join(",")}`)
+      .join("&");
+    if (`${router?.pathname}/['slug']`) {
+      router?.push(
+        `${router?.pathname?.split("/[slug]").join("")}/${searchQuery}`
+      );
+    } else {
+      router.push(`${router?.pathname}/${searchQuery}`);
+    }
   };
+  useEffect(() => {
+    let updatedCheckboxData = {};
+    slug?.split("&").map((elm) => {
+      updatedCheckboxData = {
+        ...updatedCheckboxData,
+        [elm.split("=")[0]]: elm.split("=")[1]?.split(","),
+      };
+    });
+
+    setCheckboxData(updatedCheckboxData);
+  }, [router.query]);
+  console.log(checkboxData);
 
   return (
     <div

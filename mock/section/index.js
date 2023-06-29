@@ -19,13 +19,9 @@ export const Section = [
     img: require("app/assets/banner/logo4.jpg"),
     heading: "boy",
   },
+
   {
     id: 5,
-    img: require("app/assets/banner/logo5.jpg"),
-    heading: "beauty",
-  },
-  {
-    id: 6,
     img: require("app/assets/banner/logo6.jpg"),
     heading: "accessories",
   },

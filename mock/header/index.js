@@ -17,6 +17,6 @@ export const HeaderRoutes = [
   {
     id: 4,
     name: "accessories",
-    slug: "/men",
+    slug: "/accessories",
   },
 ];
