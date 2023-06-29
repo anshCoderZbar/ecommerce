@@ -12,14 +12,6 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title> Next.js</title>
-        <link rel="icon" href="/favicon.ico" />
-        <script
-          src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
-          async
-        ></script>
-      </Head>
       <Layout>
         <Banner />
         <div className="bg-white dark:bg-dark-background">
