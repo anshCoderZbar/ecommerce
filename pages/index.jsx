@@ -7,10 +7,19 @@ import { LatestCollection } from "app/common/index/LatestCollections";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <Head>
+        <title> OneSignal + Next.js</title>
+        <link rel="icon" href="/favicon.ico" />
+        <script
+          src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+          async
+        ></script>
+      </Head>
       <Layout>
         <Banner />
         <div className="bg-white dark:bg-dark-background">
@@ -49,6 +58,6 @@ export default function Home() {
           </div>
         </div>
       </Layout>
-    </main>
+    </>
   );
 }
