@@ -101,7 +101,7 @@ export default function address() {
                       placeholder="Delivery Address"
                       rows="4"
                       {...register("address")}
-                    ></textarea>
+                    />
                   </div>
                   <div className="mb-4">
                     <FormInput
@@ -127,7 +127,6 @@ export default function address() {
                       {...register("state")}
                     />
                   </div>
-
                   <input
                     type="submit"
                     value="Save Address"
