@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
       OneSignal.init({
-        appId: "e2d90f4a-ada8-40ad-9562-9f5b41277c95",
+        appId: "fc724930-44c6-4875-bbd0-1a2e77032fce",
         notifyButton: {
           enable: true,
         },

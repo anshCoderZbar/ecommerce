@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title> OneSignal + Next.js</title>
+        <title> Next.js</title>
         <link rel="icon" href="/favicon.ico" />
         <script
           src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
