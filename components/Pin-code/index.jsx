@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { LoadingIcon } from "app/icons";
 
-export const Pincode = () => {
+export const Pincode = ({ maxWidth }) => {
   const [isValid, setIsValid] = useState(true);
   const [error, setError] = useState("");
   const [pinCode, setPinCode] = useState("");
@@ -43,8 +43,10 @@ export const Pincode = () => {
     return /^\d{6}$/.test(pinCode);
   };
   return (
-    <form>
-      <div className="relative mb-2 flex max-w-max">
+    <>
+      <div
+        className={`relative mb-2 flex ${maxWidth ? maxWidth : "max-w-fit"} `}
+      >
         <input
           type="number"
           placeholder="Enter Pin Code"
@@ -52,7 +54,8 @@ export const Pincode = () => {
           onChange={handleInputChange}
           disabled={pincodeData ? true : false}
           maxLength={6}
-          className={`w-full rounded border border-[#e6e6e6] bg-transparent px-4 py-2 outline-none dark:text-gray-100 sm:w-64 `}
+          className={`text-dark h-12 w-full border border-solid border-gray-300 px-5 py-1 text-base placeholder-current placeholder:font-semibold focus:outline-none dark:border-white dark:bg-dark-background`}
+          required
         />
         {loading ? (
           <div className="absolute right-0 top-1">
@@ -94,6 +97,6 @@ export const Pincode = () => {
       {!isValid && isValid !== null && (
         <p className="text-red-500">Invalid Pin Code</p>
       )}
-    </form>
+    </>
   );
 };

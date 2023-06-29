@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineLogout } from "react-icons/ai";
-import { CiUser } from "react-icons/ci";
+import { CiUser, CiLocationOn } from "react-icons/ci";
 import { BiHeart } from "react-icons/bi";
 
 import { PopOver } from "components/Popover";
@@ -11,27 +11,33 @@ export const Profile = () => {
   return (
     <>
       <div
-        className="flex flex-col justify-center items-center"
+        className="flex flex-col items-center justify-center"
         onClick={() => setIsOpen(!isOpen)}
       >
         <CiUser />
-        <span className="text-xs sm:text-sm font-semibold">Profile</span>
+        <span className="text-xs font-semibold sm:text-sm">Profile</span>
       </div>
       <PopOver isOpen={isOpen} setIsOpen={setIsOpen}>
         <Link
           href={"/login"}
-          className="flex gap-3 items-center text-base px-2"
+          className="flex items-center gap-3 px-2 text-base"
         >
           <AiOutlineLogout /> Signin
         </Link>
-        <div className="flex gap-3 items-center text-base py-2 px-2">
+        <div className="flex items-center gap-3 px-2 py-2 text-base">
           <CiUser />
           Settings
         </div>
-        <div className="flex gap-3 items-center text-base py-2  px-2">
+        <div className="flex items-center gap-3 px-2 py-2  text-base">
           <BiHeart /> Wishlist
         </div>
-        <button className="flex gap-3 items-center text-base pt-2 px-2">
+        <Link
+          href="/address"
+          className="flex items-center gap-3 px-2 py-2  text-base"
+        >
+          <CiLocationOn /> Addresses
+        </Link>
+        <button className="flex items-center gap-3 px-2 pt-2 text-base">
           <AiOutlineLogout /> Signout
         </button>
       </PopOver>

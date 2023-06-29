@@ -7,7 +7,7 @@ export const FormInput = forwardRef((props, ref) => {
       ref={ref}
       type={type}
       name={name}
-      className={`border border-solid border-gray-300 dark:border-white dark:bg-dark-background w-full py-1 px-5 placeholder-current text-dark h-12 focus:outline-none text-base placeholder:font-semibold ${extraClass}`}
+      className={`text-dark h-12 w-full border border-solid border-gray-300 px-5 py-1 text-base placeholder-current placeholder:font-semibold focus:outline-none dark:border-white dark:bg-dark-background ${extraClass}`}
       placeholder={placeholder}
       {...rest}
     />

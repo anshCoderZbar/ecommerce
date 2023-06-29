@@ -24,7 +24,7 @@ export const PopOver = ({ isOpen, setIsOpen, children, className }) => {
 
   return (
     <div className="relative" ref={popoverRef}>
-      <Popover className="flex justify-center">
+      <Popover className="">
         <Transition
           show={isOpen}
           as={Fragment}
@@ -35,10 +35,10 @@ export const PopOver = ({ isOpen, setIsOpen, children, className }) => {
           leaveFrom="opacity-100 translate-y-0"
           leaveTo="opacity-0 translate-y-1"
         >
-          <Popover.Panel className="z-10 absolute">
-            <div className="overflow-hidden border w-full border-white dark:border-gray-700  rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+          <Popover.Panel className="absolute z-10">
+            <div className="w-full overflow-hidden rounded-lg border border-white  shadow-lg ring-1 ring-black ring-opacity-5 dark:border-gray-700">
               <div
-                className={`gap-8 px-5 py-5  bg-white dark:bg-dark-background ${className}`}
+                className={`gap-8 bg-white px-5  py-5 dark:bg-dark-background ${className}`}
               >
                 {children}
               </div>

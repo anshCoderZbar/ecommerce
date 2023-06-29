@@ -89,7 +89,7 @@ export const Header = () => {
             </Link>
             <span className="text-xs font-semibold sm:text-sm">Cart</span>
           </div>
-          <div className="flex cursor-pointer flex-col items-center">
+          <div className=" cursor-pointer">
             <Profile />
           </div>
           <select
