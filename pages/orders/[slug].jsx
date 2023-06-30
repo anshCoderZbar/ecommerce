@@ -137,9 +137,12 @@ export default function OrderDetail() {
                         180 North King Street, Northhampton MA 1060
                       </p>
                     </div>
-                    <div className="flex w-full items-center justify-center md:items-start md:justify-start">
+                    <div className="flex w-full flex-col items-center justify-center gap-2 md:items-start md:justify-start">
                       <button className="mt-6 w-96 border border-gray-800 py-5 text-base font-medium leading-4  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-gray-900 md:mt-0 2xl:w-full">
                         Edit Details
+                      </button>
+                      <button className="mt-1 w-96   bg-red-600 py-5 text-base font-medium leading-4 text-white  hover:bg-red-700 focus:outline-none   dark:border-white dark:bg-red-900 dark:text-white dark:hover:bg-red-950 md:mt-0 2xl:w-full">
+                        Cancel Order
                       </button>
                     </div>
                   </div>

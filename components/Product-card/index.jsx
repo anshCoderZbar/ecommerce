@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { BiHeart } from "react-icons/bi";
+import { AiOutlineHeart } from "react-icons/ai";
 
-export const ProductCard = ({ product, index }) => {
+export const ProductCard = ({ product }) => {
   const router = useRouter();
   return (
     <div className="w-full cursor-pointer rounded-xl bg-white shadow-md duration-500 hover:shadow-xl  dark:bg-dark-background">
@@ -34,7 +34,8 @@ export const ProductCard = ({ product, index }) => {
               </p>
             </del>
             <div className="ml-auto">
-              <BiHeart />
+              <AiOutlineHeart />
+              {/* <AiFillHeart /> */}
             </div>
           </div>
         </div>

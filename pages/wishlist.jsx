@@ -1,11 +1,8 @@
-import React, { useState } from "react";
 import { Layout } from "app/layout";
-import { useRouter } from "next/router";
-import { Stepper } from "react-form-stepper";
+import React from "react";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
-export default function orders() {
-  const router = useRouter();
-  const [active, setActive] = useState(-1);
+export default function WishList() {
   const cartItems = [
     {
       id: 1,
@@ -44,13 +41,13 @@ export default function orders() {
       <Layout>
         <div className="bg-white dark:bg-dark-background">
           <div className="container mx-auto px-4 py-8">
-            <div className="mx-auto grid  h-auto grid-cols-1 gap-4  xl:max-w-[80%]">
+            <div className="mx-auto  xl:max-w-[80%]">
               <div className="h-fit w-full border shadow-lg">
                 {cartItems?.map((elm, index) => {
                   return (
-                    <div key={index} className="border-b p-2 sm:p-6">
-                      <div className="flex flex-wrap justify-between">
-                        <div className="flex ">
+                    <div key={index} className="border-b ">
+                      <div className="flex items-center justify-between">
+                        <div className="flex p-2 sm:p-6">
                           <div className="h-28 w-28">
                             <img src={elm?.image} className="h-full w-full" />
                           </div>
@@ -61,7 +58,7 @@ export default function orders() {
                             <span className="da text-sm text-gray-500 dark:text-gray-100 sm:text-base">
                               {elm?.details}
                             </span>
-                            <div className="mt-2 flex flex-wrap items-center gap-1 sm:mt-5 sm:gap-3">
+                            <div className="mt-5 flex flex-wrap items-center gap-1 sm:gap-3">
                               <span className="text-sm text-gray-400 line-through dark:text-gray-100 sm:text-base">
                                 {elm?.actualPrice}
                               </span>
@@ -74,43 +71,11 @@ export default function orders() {
                             </div>
                           </div>
                         </div>
-                        <div
-                          className={`orderClass mt-3 flex h-full  items-center justify-center gap-3
-                           `}
-                        >
-                          <button
-                            onClick={() => router.push("/orders/detail")}
-                            className="inline-block bg-black px-5 py-4  text-sm uppercase leading-none text-white transition-all hover:bg-red-500 dark:bg-red-900 dark:hover:bg-red-950"
-                          >
-                            View details
-                          </button>
-                          <button
-                            id={index}
-                            onClick={() =>
-                              setActive((prevActive) =>
-                                prevActive === index ? -1 : index
-                              )
-                            }
-                            className="inline-block border-2 bg-transparent px-5 py-4 text-sm uppercase leading-none  transition-all hover:bg-gray-100 dark:hover:bg-gray-900"
-                          >
-                            Track order
-                          </button>
+                        <div className=" flex h-28 cursor-pointer items-center justify-center bg-[#ececec54] px-2 text-lg text-red-600">
+                          {/* <AiOutlineHeart /> */}
+                          <AiFillHeart />
                         </div>
                       </div>
-                      <span className="text-sm">
-                        Delivery Date: June 30, 2023
-                      </span>
-                      {active === index && (
-                        <Stepper
-                          steps={[
-                            { label: "Order Placed" },
-                            { label: "Packed" },
-                            { label: "Shipped" },
-                            { label: "Delivered" },
-                          ]}
-                          activeStep={0}
-                        />
-                      )}
                     </div>
                   );
                 })}

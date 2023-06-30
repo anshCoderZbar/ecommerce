@@ -20,18 +20,11 @@ export const Category = () => {
         {Section?.map((data, i) => {
           return (
             <animated.div style={props} key={i} className="content relative">
-              {/* <Image
-                  src={data?.img}
-                  alt={data?.heading}
-                  loading="lazy"
-                  className="h-full w-full rounded-md object-cover shadow-lg"
-                /> */}
               <div className="overflow-hidden rounded-md">
                 <img
-                  // src={data?.img}
-                  src="https://loremflickr.com/150/150/order"
+                  src="https://loremflickr.com/200/200/order"
                   alt="Product"
-                  className="h-full max-h-[150px] w-full max-w-[150px] rounded-md bg-white object-cover transition-all  hover:scale-110 dark:bg-dark-background"
+                  className="h-full max-h-[200px] w-full max-w-[200px] rounded-md bg-white object-cover transition-all  hover:scale-110 dark:bg-dark-background"
                 />
               </div>
               <div className="overlay absolute bottom-0 left-0 right-0 h-0 overflow-hidden rounded-md bg-red-400 transition-all duration-300 dark:bg-red-950">
