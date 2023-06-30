@@ -49,10 +49,8 @@ export const SideFilter = ({ filterData, active, setActive }) => {
   const handleCheckboxChange = (e) => {
     e.stopPropagation();
     const { name, value, checked } = e.target;
-
     setCheckboxData((previousData) => {
       const updatedData = new Set(previousData[name] || []);
-
       if (checked) {
         updatedData.add(value);
       } else {
@@ -69,6 +67,7 @@ export const SideFilter = ({ filterData, active, setActive }) => {
   const handleApply = (e) => {
     e.preventDefault();
     const searchQuery = Object.entries(checkboxData)
+      .filter(([key, value]) => value.length > 0)
       .map(([key, value]) => `${key}=${value.join(",")}`)
       .join("&");
     if (`${router?.pathname}/['slug']`) {
