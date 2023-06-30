@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <Banner />
         <div className="bg-white dark:bg-dark-background">
+          <Banner />
           <Category />
           <div className="container mx-auto py-4">
             <div className="flex items-center justify-between px-2">

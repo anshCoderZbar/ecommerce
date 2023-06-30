@@ -58,9 +58,9 @@ export default function CartPage() {
           <div className="container mx-auto px-4 py-8">
             <div className="mx-auto grid  h-auto grid-cols-1 gap-4 md:grid-cols-[70%,30%] xl:max-w-[80%]">
               <div className="h-fit w-full border shadow-lg">
-                {cartItems?.map((elm) => {
+                {cartItems?.map((elm, index) => {
                   return (
-                    <div className="border-b p-2 sm:p-6">
+                    <div key={index} className="border-b p-2 sm:p-6">
                       <div className="flex">
                         <div className="h-28 w-28">
                           <img src={elm?.image} className="h-full w-full" />
